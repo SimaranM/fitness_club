@@ -1,0 +1,109 @@
+#!/usr/bin/env python
+import os
+import re
+import sys
+import logger
+
+logger = logger.getCustomLogger(__name__)
+
+# Check if in the middle of a rebase
+if os.path.isdir('.git/rebase-apply') or os.path.isdir('.git/rebase-merge'):
+    logger.info("Skip prepare-commit-msg hook and continue with rebasing")
+    sys.exit(0)
+
+def getCommitType(branchName):
+    regex = r"^(feature|bugfix|hotfix|release)"
+    match = re.match(regex, branchName)
+    if match:
+        commitType = match.group(1)
+        logger.debug(f"Found valid prefix in branch name. Commit type is set to: {commitType}")
+    else:
+        commitType = "chore"
+        logger.warning(f"Missing valid prefix in branch name. Commit type is set to: {commitType}")
+
+    return commitType
+
+def getJiraID(branchName):
+    regex = r"[A-Z]+-\d+"
+    match = re.search(regex, branchName)
+    if match:
+        jiraId = match.group()
+        logger.debug(f"Found issue-ID in branch name: {jiraId}")
+    else:
+        jiraId = None
+        logger.info(f"Missing issue-ID in branch name.")
+
+    return jiraId
+
+# Commit message can have already a commit type. This occurs when 
+# calling 'git commit --amend' or added manually
+def hasCommitType(line):
+    regex = r"^(feature|bugfix|hotfix|release|docs|style|refactor|perf|test|chore):\s[A-Z]{1}"
+    match = re.match(regex, line)
+    if match:
+        logger.debug(f"Found commit type in subject line: {match.group()}")
+        result = True
+    else:
+        logger.debug("Missing commit type in subject line")
+        result = False
+
+    return result
+
+def prepareCommitMsg(content):
+    lines = content.splitlines()
+    logger.debug(f"Content to prepare:\n{lines}")
+    match len(lines):
+        case 0: 
+            logger.error("Content is empty!")
+            sys.exit(1)
+        case 1:
+            logger.info("Commit message with subject only")
+        case _:
+            if lines[1] != "":
+                logger.info("Adding newline after commit's subject")
+                lines.insert(1, "") # newline will be added with "\n".join()
+            logger.info(f"Commit message with subject and body:\n{lines}")
+
+    # Read the branch name from the environment and extract branch type and Jira-ID
+    branchName = os.popen("git rev-parse --abbrev-ref HEAD").read().strip()
+
+    commitType = getCommitType(branchName)
+    if not hasCommitType(lines[0]):
+        logger.info(f"Adding commit type to subject line: {commitType}")
+        lines[0] = f"{commitType}: {lines[0]}"
+        logger.debug(f"Commit message with added commit type:\n{lines}")
+
+    jiraId = getJiraID(branchName)
+    if jiraId != None:
+        logger.info(f"Adding issue-ID as footer: {jiraId}")        
+        lines.append("")
+        lines.append(f"Issue-ID: {jiraId}")
+        logger.debug(f"Commit message with added issue ID: {lines}")
+
+    content = '\n'.join(lines)
+    return content
+
+if __name__ == "__main__":
+    # Check if commit message file path is provided
+    if len(sys.argv) < 2:
+        logger.error("Usage: prepare-commit-msg <commitMsgFile> [source]")
+        sys.exit(1)
+
+    commitMsgFile = sys.argv[1]
+    
+    # Open the commit message file and read its content
+    with open(commitMsgFile, 'r') as file:
+        logger.info("Reading commit message file")
+        content = file.read()
+    
+    # Adjust commit message
+    logger.info("Prepare commit message")
+    content = prepareCommitMsg(content)
+
+    # Write the modified content back to the commit message file
+    with open(commitMsgFile, 'w') as file:
+        logger.info("Writing commit message file")
+        file.write(content)
+        logger.debug(f"Updated commit message:\n{content}")
+
+    sys.exit(0)

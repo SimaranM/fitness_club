@@ -1,0 +1,5 @@
+2023-12-07 10:18:08,456 - INFO     [prepare-commit-msg] - Reading commit message file
+2023-12-07 10:18:08,456 - INFO     [prepare-commit-msg] - Prepare commit message
+2023-12-07 10:18:08,457 - DEBUG    [prepare-commit-msg] - Content to prepare:
+[]
+2023-12-07 10:18:08,457 - ERROR    [prepare-commit-msg] - Content is empty!

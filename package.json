@@ -1,0 +1,116 @@
+{
+  "name": "jamflow-templates",
+  "version": "0.0.1",
+  "private": true,
+  "description": "jamflow-templates",
+  "author": "BitTwister IT GmbH",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "cspell:code": "cspell --config .cspell/cspell-code.json",
+    "cspell:content": "cspell --config .cspell/cspell-content.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "stylelint": "stylelint \"**/*.scss\"",
+    "stylelint:fix": "stylelint \"**/*.scss\" --fix",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
+    "gatsby": "^5.12.4",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-image": "^3.12.0",
+    "gatsby-plugin-sass": "^6.12.0",
+    "gatsby-plugin-sharp": "^5.12.0",
+    "gatsby-source-filesystem": "^5.12.0",
+    "gatsby-transformer-json": "^5.12.0",
+    "gatsby-transformer-sharp": "^5.12.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.9.1",
+    "react-dom": "^18.2.0",
+    "sass": "^1.68.0",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "@cspell/dict-de-de": "^3.2.0",
+    "@types/node": "^20.7.2",
+    "@types/react": "^18.2.23",
+    "@types/react-dom": "^18.2.8",
+    "@types/swiper": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "cspell": "^7.3.8",
+    "cspell-dict-lorem-ipsum": "^1.1.2",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "3.0.3",
+    "stylelint": "^15.10.3",
+    "stylelint-config-recommended-scss": "^13.0.0",
+    "stylelint-config-standard": "^34.0.0",
+    "typescript": "^5.3.2"
+  },
+  "lint-staged": {
+    "**/*.{json,md,mdx}": [
+      "npx prettier --write",
+      "cspell --config .cspell/cspell-content.json --no-progress"
+    ],
+    "**/*.{ts,tsx}": [
+      "npx eslint --fix",
+      "cspell --config .cspell/cspell-code.json --no-progress"
+    ],
+    "**/*.{css,scss}": [
+      "npx prettier --write",
+      "npx stylelint --fix",
+      "cspell --config .cspell/cspell-code.json --no-progress"
+    ],
+    "ignore": ".husky"
+  },
+  "prettier": {
+    "bracketSameLine": true,
+    "tabWidth": 4,
+    "singleQuote": false
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "react",
+      "prettier"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-recommended-scss"
+    ]
+  }
+}
