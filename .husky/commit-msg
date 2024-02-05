@@ -1,0 +1,128 @@
+#!/usr/bin/env python
+import os
+import re
+import sys
+import logger
+
+logger = logger.getCustomLogger(__name__)
+
+# Check if in the middle of a rebase
+if os.path.isdir('.git/rebase-apply') or os.path.isdir('.git/rebase-merge'):
+    logger.info("Skip commit-msg hook and continue with rebasing")
+    exit(0)
+
+def isValidMessageFormat(message):
+    # Although defined, commit message can have several formats.
+    # Message containing only subject.
+    regexSubjectNoFooter = r"^.+$"
+    # Message containing subject, empty line and footer
+    regexSubjectAndFooter = r"^.+\n\n.+$"
+    # Message containing subject, empty line and body
+    regexSubjectBodyNoFooter = r"^.+\n\n.(.|\n)*.$"
+    # Message containing subject, empty line, body, empty line and footer
+    regexSubjectBodyAndFooter = r"^.+\n\n.(.|\n)*.\n\n.+$"
+    
+    if re.match(regexSubjectNoFooter, message):
+        logger.info("Commit message contains subject only")
+        logger.warning("Issue-ID is optional, but useful for PM tools")
+    elif re.match(regexSubjectAndFooter, message):
+        logger.info("Commit message contains subject and footer")
+    elif re.match(regexSubjectBodyNoFooter, message):
+        logger.info("Commit message contains subject and body")
+        logger.warning("Issue-ID is optional, but useful for PM tools")
+    elif re.match(regexSubjectBodyAndFooter, message):
+        logger.info("Commit message contains subject, body and footer")
+    else:
+        logger.error("Commit message has invalid format")
+        logger.debug(f"Commit message data:\n{message}")
+        return False
+    
+    return True
+
+# Issue-ID in footer is optional but recommended
+def isValidFooter(message):
+    regexIssueID = r"[A-Z]+-\d+"
+    match = re.match(regexIssueID, message)
+    if match:
+        logger.debug(f"Commit message contains issue ID: {match.group()}")
+        # Check if format is valid
+        regex = r"Issue-ID:\s[A-Z]+-\d+$"
+        match = re.match(regexFooter, line)
+        if not match:
+            logger.error("Commit footer has invalid format")
+            logger.debug(f"Commit message data:\n{message}")
+            return False
+    
+    return True
+        
+def isValidSubjectFormat(line):
+    regex = r"^[a-z]+:\s[A-Z]{1}.+[a-zA-Z0-9]$"
+    match = re.match(regex, line)
+    if match:
+        logger.info("Subject's format is valid")
+        return True
+    else:
+        logger.error("Subject's format is invalid")
+        logger.debug(f"Subject line data: {line}")
+        return False
+
+def isValidCommitType(line):
+    regex = r"^(feature|bugfix|hotfix|release|docs|style|refactor|perf|test|chore):\s[A-Z]{1}"
+    match = re.match(regex, line)
+    if match:
+        logger.info("Commit type is valid")
+        return True
+    else:
+        logger.error("Commit type is missing or invalid")
+        logger.debug(f"Subject line data: {line}")
+        return False
+
+def isValidSubjectLength(line):
+    # Hard limit
+    regex = r"^.{0,80}$"
+    match = re.match(regex, line)
+    if not match:
+        logger.error("Subject contains more than 80 characters")
+        return False
+    
+    # Soft limit
+    regex = r"^(feature|bugfix|hotfix|release|docs|style|refactor|perf|test|chore):\s.{0,50}$"
+    match = re.match(regex, line)
+    if not match:
+        logger.warning("Try to describe your commit with less than 50 characters")
+
+    return True
+
+def removeComments(content):
+    splitted = content.splitlines()
+    lines = [line for line in splitted if not line.strip().startswith("#")]
+    filtered = '\n'.join(lines)
+    return filtered
+
+if __name__ == "__main__":
+    # Check if commit message file path is provided
+    if len(sys.argv) < 2:
+        logger.error("Usage: commit-msg <commitMsgFile> [source]")
+        sys.exit(1)
+
+    with open(sys.argv[1], "r") as file:
+        content = removeComments(file.read())
+        logger.debug(f"Content without comments:\n{content}")
+
+    # Message validation
+    if not isValidMessageFormat(content):
+        sys.exit(1)
+    elif not isValidFooter(content):
+        sys.exit(1)
+    else:
+        # Line validation
+        lines = content.splitlines()
+        if not isValidSubjectFormat(lines[0]):
+            sys.exit(1)
+        elif not isValidSubjectLength(lines[0]):
+            sys.exit(1)
+        elif not isValidCommitType(lines[0]):
+            sys.exit(1)
+        else:
+            logger.info("Commit message is valid")
+            sys.exit(0)

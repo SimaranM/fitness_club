@@ -1,0 +1,8 @@
+gatsby
+fortawesome
+fontawesome
+tsbuildinfo
+esnext
+popperjs
+jamflow
+typecheck

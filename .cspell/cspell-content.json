@@ -1,0 +1,22 @@
+{
+    "version": "0.2",
+    "language": "en,de,lorem-ipsum",
+    "words": [],
+    "ignorePaths": ["**/tsconfig.json", "**/package.json", "**/README.md"],
+    "ignoreRegExpList": ["http://.*", "https://.*"],
+    "import": [
+        "@cspell/dict-de-de/cspell-ext.json",
+        "@cspell/dict-lorem-ipsum/cspell-ext.json",
+        "@cspell/dict-python/cspell-ext.json"
+    ],
+    "files": ["**/*.{json,md,mdx}"],
+    "useGitignore": true,
+    "dictionaries": ["custom-dict-content"],
+    "dictionaryDefinitions": [
+        {
+            "name": "custom-dict-content",
+            "path": "./.cspell/custom-dict-content.txt",
+            "addWords": true
+        }
+    ]
+}
