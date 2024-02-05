@@ -1,0 +1,18 @@
+#scrollup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primary);
+  background-image: var(--gradient-background);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 48px;
+  color: var(--light);
+  font-size: 16px;
+  border: 0;
+  border-radius: 4px;
+  font-weight: 700;
+  z-index: 99999;
+  cursor: pointer;
+  }
