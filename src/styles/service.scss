@@ -1,0 +1,110 @@
+.service {
+    padding-bottom: 100px;
+    padding-top: 100px;
+
+    .sub-title {
+        display: inline-block;
+        line-height: 1.2;
+        color: var(--primary);
+        text-transform: uppercase;
+        font-size: 14px;
+        position: relative;
+        padding: 8px 20px 6px;
+        font-weight: 700;
+        margin-bottom: 26px;
+        letter-spacing: 0.05em;
+        background: var(--light);
+        box-shadow: 0px 8px 19px rgba(0, 0, 0, 0.07);
+        border-radius: 50px;
+    }
+
+    .sec-title {
+        margin-bottom: calc(var(--section-title-space) - 43px);
+        margin-top: -0.23em;
+        font-weight: 500;
+        line-height: 58px;
+    }
+
+    .service-card:hover {
+        box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.07);
+    }
+
+    .fitness_icon {
+        font-size: 40px;
+    }
+   .service-card_text {
+        margin-bottom: 30px;
+    }
+    .service-card.style2 {
+        background: #f6f6f7;
+        border: 1px solid #f6f6f7;
+        display: block;
+        border-radius: 15px;
+        padding: 40px;
+        transition: 0.4s;
+        &:hover {
+            background: var(--light);
+            border: 1px solid rgba(237, 237, 237, 0.89);
+            box-shadow: 0px 16px 51px rgba(0, 0, 0, 0.07);
+            .fitness_icon {
+                color: var(--light);
+            }
+            .service-card_icon {
+                background: var(--gradient-background);
+            }
+            .service-card_title {
+                font-size: 24px;
+                margin-bottom: 13px;
+            }
+            .link-btn {
+                .icon {
+                    background: var(--gradient-background);
+                    color: var(--light);
+                }
+            }
+        }
+        .service-card_icon {
+            height: 100px;
+            width: 100px;
+            box-shadow: 0px 16px 51px rgba(0, 0, 0, 0.07);
+            border: 1px solid rgba(237, 237, 237, 0.89);
+            border-radius: 15px;
+            text-align: center;
+            line-height: 100px;
+            background: var(--light);
+            margin-bottom: 40px;
+            transition: 0.4s;
+        }
+        .service-card_title {
+            a {
+                color: var(--dark);
+            }
+        }
+        .link-btn {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--dark);
+            &:before {
+                width: calc(100% - 55px);
+                background-color: var(--primary);
+                bottom: 12px;
+                left: 55px;
+            }
+            .icon {
+                padding: 15px;
+                line-height: 44px;
+                border-radius: 50%;
+                background: var(--light);
+                border: 1px solid rgba(237, 237, 237, 0.89);
+                box-shadow: 0px 16px 51px rgba(0, 0, 0, 0.07);
+                text-align: center;
+                color: var(--dark);
+                margin-right: 7px;
+                margin-left: 0;
+                transition: 0.4s;
+            }
+        }
+    }
+}
