@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
             </section>
-            <section className="contact-page mt-5 mb-5">
+            <section className="contact-page ">
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-4 col-lg-5">
