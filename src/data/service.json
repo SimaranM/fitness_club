@@ -7,36 +7,42 @@
                 "heading": "Gym Fitness Class",
                 "dec": "Our gym is a judgment-free zone, and our members are like family, motivating and inspiring each.",
                 "icon": "faArrowRight",
+                "image": "dumbbell",
                 "text": "Read More"
             },
             {
                 "heading": "Body Building",
                 "dec": " Building muscle increases your resting metabolic rate, which can aid in weight management and fat loss.",
                 "icon": "faArrowRight",
+                "image": "fitness",
                 "text": "Read More"
             },
             {
                 "heading": "Power Lifting",
                 "dec": "Achieving fitness goals and building a well-developed physique can boost self-confidence and body image.",
                 "icon": "faArrowRight",
+                "image": "muscle",
                 "text": "Read More"
             },
             {
                 "heading": "Discipline and Dedication",
                 "dec": "Building muscle increases your resting metabolic rate, which can aid in weight management and fat loss.",
                 "icon": "faArrowRight",
+                "image": "treadmill",
                 "text": "Read More"
             },
             {
                 "heading": "Body Building",
                 "dec": " Building muscle increases your resting metabolic rate, which can aid in weight management and fat loss.",
                 "icon": "faArrowRight",
+                "image": "weights",
                 "text": "Read More"
             },
             {
                 "heading": "Power Lifting",
                 "dec": "Achieving fitness goals and building a well-developed physique can boost self-confidence and body image.",
                 "icon": "faArrowRight",
+                "image": "muscles",
                 "text": "Read More"
             }
         ]
