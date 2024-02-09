@@ -1,0 +1,57 @@
+[
+  {
+    "mainTitle": "Kontakt",
+    "title": "KONTAKT US",
+    "news": "Eine Nachricht senden",
+    "desc": "Ihre Zufriedenheit ist unsere höchste Priorität. Bei Fragen rufen Sie uns gerne an oder schreiben Sie uns eine Nachricht.",
+    "button": "Absenden",
+    "contactUs": [
+      {
+        "icon": "faFacebookF",
+        "link": ""
+      },
+      {
+        "icon": "faTwitter",
+        "link": ""
+      },
+      {
+        "icon": "faInstagram",
+        "link": ""
+      },
+      {
+        "icon": "faGoogle",
+        "link": ""
+      }
+    ],
+    "formInputs": [
+      {
+        "type": "text",
+        "placeholder": "Full Name",
+        "name": "name"
+      },
+      {
+        "type": "email",
+        "placeholder": "Email Address",
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "placeholder": "Phone",
+        "name": "Phone"
+      },
+      {
+        "type": "text",
+        "placeholder": "Subject",
+        "name": "Subject"
+      }
+    ],
+    "formTextArea": {
+      "name": "message",
+      "placeholder": "Write a Message"
+    },
+    "submitButton": {
+      "type": "submit",
+      "text": "Submit"
+    }
+  }
+]

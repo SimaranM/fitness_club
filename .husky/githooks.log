@@ -66,3 +66,44 @@ chore: Create contact component
 2024-02-05 15:29:52,993 - INFO     [commit-msg] - Subject's format is valid
 2024-02-05 15:29:52,994 - INFO     [commit-msg] - Commit type is valid
 2024-02-05 15:29:52,994 - INFO     [commit-msg] - Commit message is valid
+2024-02-07 10:48:20,929 - INFO     [prepare-commit-msg] - Reading commit message file
+2024-02-07 10:48:20,929 - INFO     [prepare-commit-msg] - Prepare commit message
+2024-02-07 10:48:20,930 - DEBUG    [prepare-commit-msg] - Content to prepare:
+['Create Service component']
+2024-02-07 10:48:20,930 - INFO     [prepare-commit-msg] - Commit message with subject only
+2024-02-07 10:48:20,973 - WARNING  [prepare-commit-msg] - Missing valid prefix in branch name. Commit type is set to: chore
+2024-02-07 10:48:20,974 - DEBUG    [prepare-commit-msg] - Missing commit type in subject line
+2024-02-07 10:48:20,974 - INFO     [prepare-commit-msg] - Adding commit type to subject line: chore
+2024-02-07 10:48:20,974 - DEBUG    [prepare-commit-msg] - Commit message with added commit type:
+['chore: Create Service component']
+2024-02-07 10:48:20,974 - INFO     [prepare-commit-msg] - Missing issue-ID in branch name.
+2024-02-07 10:48:20,974 - INFO     [prepare-commit-msg] - Writing commit message file
+2024-02-07 10:48:20,975 - DEBUG    [prepare-commit-msg] - Updated commit message:
+chore: Create Service component
+2024-02-07 10:48:21,222 - DEBUG    [commit-msg] - Content without comments:
+chore: Create Service component
+2024-02-07 10:48:21,222 - INFO     [commit-msg] - Commit message contains subject only
+2024-02-07 10:48:21,222 - WARNING  [commit-msg] - Issue-ID is optional, but useful for PM tools
+2024-02-07 10:48:21,223 - INFO     [commit-msg] - Subject's format is valid
+2024-02-07 10:48:21,223 - INFO     [commit-msg] - Commit type is valid
+2024-02-07 10:48:21,224 - INFO     [commit-msg] - Commit message is valid
+2024-02-09 12:51:06,156 - INFO     [prepare-commit-msg] - Reading commit message file
+2024-02-09 12:51:06,156 - INFO     [prepare-commit-msg] - Prepare commit message
+2024-02-09 12:51:06,156 - DEBUG    [prepare-commit-msg] - Content to prepare:
+['create contact json file']
+2024-02-09 12:51:06,156 - INFO     [prepare-commit-msg] - Commit message with subject only
+2024-02-09 12:51:06,212 - WARNING  [prepare-commit-msg] - Missing valid prefix in branch name. Commit type is set to: chore
+2024-02-09 12:51:06,213 - DEBUG    [prepare-commit-msg] - Missing commit type in subject line
+2024-02-09 12:51:06,213 - INFO     [prepare-commit-msg] - Adding commit type to subject line: chore
+2024-02-09 12:51:06,213 - DEBUG    [prepare-commit-msg] - Commit message with added commit type:
+['chore: create contact json file']
+2024-02-09 12:51:06,213 - INFO     [prepare-commit-msg] - Missing issue-ID in branch name.
+2024-02-09 12:51:06,213 - INFO     [prepare-commit-msg] - Writing commit message file
+2024-02-09 12:51:06,213 - DEBUG    [prepare-commit-msg] - Updated commit message:
+chore: create contact json file
+2024-02-09 12:51:06,369 - DEBUG    [commit-msg] - Content without comments:
+chore: create contact json file
+2024-02-09 12:51:06,369 - INFO     [commit-msg] - Commit message contains subject only
+2024-02-09 12:51:06,370 - WARNING  [commit-msg] - Issue-ID is optional, but useful for PM tools
+2024-02-09 12:51:06,370 - ERROR    [commit-msg] - Subject's format is invalid
+2024-02-09 12:51:06,370 - DEBUG    [commit-msg] - Subject line data: chore: create contact json file

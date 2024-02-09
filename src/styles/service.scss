@@ -19,7 +19,7 @@
     }
 
     .sec-title {
-        margin-bottom: calc(var(--section-title-space) - 43px);
+        margin-bottom: 30px;
         margin-top: -0.23em;
         font-weight: 500;
         line-height: 58px;
@@ -28,11 +28,7 @@
     .service-card:hover {
         box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.07);
     }
-
-    .fitness_icon {
-        font-size: 40px;
-    }
-   .service-card_text {
+    .service-card_text {
         margin-bottom: 30px;
     }
     .service-card.style2 {
@@ -46,8 +42,8 @@
             background: var(--light);
             border: 1px solid rgba(237, 237, 237, 0.89);
             box-shadow: 0px 16px 51px rgba(0, 0, 0, 0.07);
-            .fitness_icon {
-                color: var(--light);
+            .fitness-icon {
+                filter: invert(100%);
             }
             .service-card_icon {
                 background: var(--gradient-background);
@@ -74,6 +70,9 @@
             background: var(--light);
             margin-bottom: 40px;
             transition: 0.4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .service-card_title {
             a {
