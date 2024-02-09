@@ -1,0 +1,81 @@
+[
+  {
+    "titleFitness": "fitner",
+    "titleCoaches": "COACHES",
+    "desc": "Kick your feet up! With a gym designed around you, we think you’ll love it here.",
+    "team": [
+      {
+        "imageSrc": "team1",
+        "description": "Over 50 group training sessions per week. There is no one type or way in our diverse community.",
+        "name": "Arial Hedger",
+        "role": "Fitness & Body",
+        "socialLinks": [
+          {
+            "icon": "faFacebookF",
+            "link": "#"
+          },
+          {
+            "icon": "faTwitter",
+            "link": "#"
+          },
+          {
+            "icon": "faInstagram",
+            "link": "#"
+          },
+          {
+            "icon": "faGoogle",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "imageSrc": "team2",
+        "description": "Over 50 group training sessions per week. There is no one type or way in our diverse community.",
+        "name": "Marina Aring",
+        "role": "Fitness & Body",
+        "socialLinks": [
+          {
+            "icon": "faFacebookF",
+            "link": "#"
+          },
+          {
+            "icon": "faTwitter",
+            "link": "#"
+          },
+          {
+            "icon": "faInstagram",
+            "link": "#"
+          },
+          {
+            "icon": "faGoogle",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "imageSrc": "team3",
+        "description": "Over 50 group training sessions per week. There is no one type or way in our diverse community.",
+        "name": "Alan Lynda",
+        "role": "Fitness & Body",
+        "socialLinks": [
+          {
+            "icon": "faFacebookF",
+            "link": "#"
+          },
+          {
+            "icon": "faTwitter",
+            "link": "#"
+          },
+          {
+            "icon": "faInstagram",
+            "link": "#"
+          },
+          {
+            "icon": "faGoogle",
+            "link": "#"
+          }
+        ]
+      }
+    ]
+  }
+]
