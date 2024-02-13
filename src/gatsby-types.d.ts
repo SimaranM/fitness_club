@@ -632,6 +632,8 @@ type File = Node & {
   readonly childServiceJson: Maybe<ServiceJson>;
   /** Returns the first child node of type TeamJson or null if there are no children of given type on this node */
   readonly childTeamJson: Maybe<TeamJson>;
+  /** Returns the first child node of type VideoJson or null if there are no children of given type on this node */
+  readonly childVideoJson: Maybe<VideoJson>;
   readonly children: ReadonlyArray<Node>;
   /** Returns all children nodes filtered by type ContactJson */
   readonly childrenContactJson: Maybe<ReadonlyArray<Maybe<ContactJson>>>;
@@ -641,6 +643,8 @@ type File = Node & {
   readonly childrenServiceJson: Maybe<ReadonlyArray<Maybe<ServiceJson>>>;
   /** Returns all children nodes filtered by type TeamJson */
   readonly childrenTeamJson: Maybe<ReadonlyArray<Maybe<TeamJson>>>;
+  /** Returns all children nodes filtered by type VideoJson */
+  readonly childrenVideoJson: Maybe<ReadonlyArray<Maybe<VideoJson>>>;
   readonly ctime: Scalars['Date'];
   readonly ctimeMs: Scalars['Float'];
   readonly dev: Scalars['Int'];
@@ -787,11 +791,13 @@ type FileFieldSelector = {
   readonly childImageSharp: InputMaybe<ImageSharpFieldSelector>;
   readonly childServiceJson: InputMaybe<ServiceJsonFieldSelector>;
   readonly childTeamJson: InputMaybe<TeamJsonFieldSelector>;
+  readonly childVideoJson: InputMaybe<VideoJsonFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly childrenContactJson: InputMaybe<ContactJsonFieldSelector>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFieldSelector>;
   readonly childrenServiceJson: InputMaybe<ServiceJsonFieldSelector>;
   readonly childrenTeamJson: InputMaybe<TeamJsonFieldSelector>;
+  readonly childrenVideoJson: InputMaybe<VideoJsonFieldSelector>;
   readonly ctime: InputMaybe<FieldSelectorEnum>;
   readonly ctimeMs: InputMaybe<FieldSelectorEnum>;
   readonly dev: InputMaybe<FieldSelectorEnum>;
@@ -836,11 +842,13 @@ type FileFilterInput = {
   readonly childImageSharp: InputMaybe<ImageSharpFilterInput>;
   readonly childServiceJson: InputMaybe<ServiceJsonFilterInput>;
   readonly childTeamJson: InputMaybe<TeamJsonFilterInput>;
+  readonly childVideoJson: InputMaybe<VideoJsonFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly childrenContactJson: InputMaybe<ContactJsonFilterListInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
   readonly childrenServiceJson: InputMaybe<ServiceJsonFilterListInput>;
   readonly childrenTeamJson: InputMaybe<TeamJsonFilterListInput>;
+  readonly childrenVideoJson: InputMaybe<VideoJsonFilterListInput>;
   readonly ctime: InputMaybe<DateQueryOperatorInput>;
   readonly ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   readonly dev: InputMaybe<IntQueryOperatorInput>;
@@ -926,11 +934,13 @@ type FileSortInput = {
   readonly childImageSharp: InputMaybe<ImageSharpSortInput>;
   readonly childServiceJson: InputMaybe<ServiceJsonSortInput>;
   readonly childTeamJson: InputMaybe<TeamJsonSortInput>;
+  readonly childVideoJson: InputMaybe<VideoJsonSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly childrenContactJson: InputMaybe<ContactJsonSortInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpSortInput>;
   readonly childrenServiceJson: InputMaybe<ServiceJsonSortInput>;
   readonly childrenTeamJson: InputMaybe<TeamJsonSortInput>;
+  readonly childrenVideoJson: InputMaybe<VideoJsonSortInput>;
   readonly ctime: InputMaybe<SortOrderEnum>;
   readonly ctimeMs: InputMaybe<SortOrderEnum>;
   readonly dev: InputMaybe<SortOrderEnum>;
@@ -1591,6 +1601,7 @@ type Query = {
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
   readonly allTeamJson: TeamJsonConnection;
+  readonly allVideoJson: VideoJsonConnection;
   readonly contactJson: Maybe<ContactJson>;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
@@ -1602,6 +1613,7 @@ type Query = {
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
   readonly teamJson: Maybe<TeamJson>;
+  readonly videoJson: Maybe<VideoJson>;
 };
 
 
@@ -1693,6 +1705,14 @@ type Query_allTeamJsonArgs = {
 };
 
 
+type Query_allVideoJsonArgs = {
+  filter: InputMaybe<VideoJsonFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<VideoJsonSortInput>>>;
+};
+
+
 type Query_contactJsonArgs = {
   button: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -1765,11 +1785,13 @@ type Query_fileArgs = {
   childImageSharp: InputMaybe<ImageSharpFilterInput>;
   childServiceJson: InputMaybe<ServiceJsonFilterInput>;
   childTeamJson: InputMaybe<TeamJsonFilterInput>;
+  childVideoJson: InputMaybe<VideoJsonFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
   childrenContactJson: InputMaybe<ContactJsonFilterListInput>;
   childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
   childrenServiceJson: InputMaybe<ServiceJsonFilterListInput>;
   childrenTeamJson: InputMaybe<TeamJsonFilterListInput>;
+  childrenVideoJson: InputMaybe<VideoJsonFilterListInput>;
   ctime: InputMaybe<DateQueryOperatorInput>;
   ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   dev: InputMaybe<IntQueryOperatorInput>;
@@ -1905,6 +1927,21 @@ type Query_teamJsonArgs = {
   team: InputMaybe<TeamJsonTeamFilterListInput>;
   titleCoaches: InputMaybe<StringQueryOperatorInput>;
   titleFitness: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_videoJsonArgs = {
+  Video: InputMaybe<StringQueryOperatorInput>;
+  button: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  desc: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  learnMore: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  playIcon: InputMaybe<StringQueryOperatorInput>;
+  spinImage: InputMaybe<StringQueryOperatorInput>;
+  title: InputMaybe<VideoJsonTitleFilterInput>;
 };
 
 type ServiceJson = Node & {
@@ -3057,6 +3094,180 @@ type TransformOptions = {
   readonly grayscale: InputMaybe<Scalars['Boolean']>;
   readonly rotate: InputMaybe<Scalars['Int']>;
   readonly trim: InputMaybe<Scalars['Float']>;
+};
+
+type VideoJson = Node & {
+  readonly Video: Maybe<Scalars['String']>;
+  readonly button: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly desc: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly learnMore: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly playIcon: Maybe<Scalars['String']>;
+  readonly spinImage: Maybe<Scalars['String']>;
+  readonly title: Maybe<VideoJsonTitle>;
+};
+
+type VideoJsonConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<VideoJsonEdge>;
+  readonly group: ReadonlyArray<VideoJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<VideoJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type VideoJsonConnection_distinctArgs = {
+  field: VideoJsonFieldSelector;
+};
+
+
+type VideoJsonConnection_groupArgs = {
+  field: VideoJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type VideoJsonConnection_maxArgs = {
+  field: VideoJsonFieldSelector;
+};
+
+
+type VideoJsonConnection_minArgs = {
+  field: VideoJsonFieldSelector;
+};
+
+
+type VideoJsonConnection_sumArgs = {
+  field: VideoJsonFieldSelector;
+};
+
+type VideoJsonEdge = {
+  readonly next: Maybe<VideoJson>;
+  readonly node: VideoJson;
+  readonly previous: Maybe<VideoJson>;
+};
+
+type VideoJsonFieldSelector = {
+  readonly Video: InputMaybe<FieldSelectorEnum>;
+  readonly button: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly desc: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly learnMore: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly playIcon: InputMaybe<FieldSelectorEnum>;
+  readonly spinImage: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<VideoJsonTitleFieldSelector>;
+};
+
+type VideoJsonFilterInput = {
+  readonly Video: InputMaybe<StringQueryOperatorInput>;
+  readonly button: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly desc: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly learnMore: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly playIcon: InputMaybe<StringQueryOperatorInput>;
+  readonly spinImage: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<VideoJsonTitleFilterInput>;
+};
+
+type VideoJsonFilterListInput = {
+  readonly elemMatch: InputMaybe<VideoJsonFilterInput>;
+};
+
+type VideoJsonGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<VideoJsonEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<VideoJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<VideoJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type VideoJsonGroupConnection_distinctArgs = {
+  field: VideoJsonFieldSelector;
+};
+
+
+type VideoJsonGroupConnection_groupArgs = {
+  field: VideoJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type VideoJsonGroupConnection_maxArgs = {
+  field: VideoJsonFieldSelector;
+};
+
+
+type VideoJsonGroupConnection_minArgs = {
+  field: VideoJsonFieldSelector;
+};
+
+
+type VideoJsonGroupConnection_sumArgs = {
+  field: VideoJsonFieldSelector;
+};
+
+type VideoJsonSortInput = {
+  readonly Video: InputMaybe<SortOrderEnum>;
+  readonly button: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly desc: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly learnMore: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly playIcon: InputMaybe<SortOrderEnum>;
+  readonly spinImage: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<VideoJsonTitleSortInput>;
+};
+
+type VideoJsonTitle = {
+  readonly centerText: Maybe<Scalars['String']>;
+  readonly mainText: Maybe<Scalars['String']>;
+  readonly prefix: Maybe<Scalars['String']>;
+  readonly suffix: Maybe<Scalars['String']>;
+};
+
+type VideoJsonTitleFieldSelector = {
+  readonly centerText: InputMaybe<FieldSelectorEnum>;
+  readonly mainText: InputMaybe<FieldSelectorEnum>;
+  readonly prefix: InputMaybe<FieldSelectorEnum>;
+  readonly suffix: InputMaybe<FieldSelectorEnum>;
+};
+
+type VideoJsonTitleFilterInput = {
+  readonly centerText: InputMaybe<StringQueryOperatorInput>;
+  readonly mainText: InputMaybe<StringQueryOperatorInput>;
+  readonly prefix: InputMaybe<StringQueryOperatorInput>;
+  readonly suffix: InputMaybe<StringQueryOperatorInput>;
+};
+
+type VideoJsonTitleSortInput = {
+  readonly centerText: InputMaybe<SortOrderEnum>;
+  readonly mainText: InputMaybe<SortOrderEnum>;
+  readonly prefix: InputMaybe<SortOrderEnum>;
+  readonly suffix: InputMaybe<SortOrderEnum>;
 };
 
 type WebPOptions = {

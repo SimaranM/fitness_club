@@ -1,0 +1,122 @@
+.video-area {
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-off-white);
+    padding-top: 120px !important;
+
+    .section-title {
+        h3 {
+            position: relative;
+            font-size: 50px;
+            line-height: 50px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-family: "Teko", sans-serif;
+
+            span {
+                color: #e63a34;
+            }
+        }
+    }
+
+    .video-text {
+        p {
+            color: #8e8e8e;
+            font-size: 18px;
+            line-height: 30px;
+            margin-bottom: 0;
+        }
+
+        .btn {
+            color: #fff;
+            background-image: -webkit-linear-gradient(-72deg, #e63a34 0%, #ee7349 99%);
+        }
+
+        .btn-gra {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 24px 50px;
+            border-radius: 0;
+            font-size: 15px;
+            line-height: 1;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+    }
+
+    .video-wrap {
+        position: relative;
+        padding: 15px;
+        background: #fff;
+        box-shadow: 0px 10px 30px 0px rgba(186, 186, 186, 0.41);
+        z-index: 10;
+        margin-bottom: -130px;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            bottom: 15px;
+            right: 15px;
+            background: #101010;
+            opacity: 0.6;
+            z-index: 2;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .video-play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+
+            a {
+                position: relative;
+                display: inline-block;
+                height: 100px;
+                width: 100px;
+                line-height: 100px;
+                color: #fff;
+                font-size: 24px;
+                text-align: center;
+                background: #e63a34;
+                border-radius: 50%;
+                background-image: -webkit-linear-gradient(-72deg, #e63a34 0%, #ee7349 99%);
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: -10px;
+                    right: -10px;
+                    top: -10px;
+                    bottom: -10px;
+                    border: 2px solid #ffffff;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    .video-shape {
+        position: absolute;
+        right: 95px;
+        top: -125px;
+        z-index: -1;
+
+        .rotateme {
+            animation: spin 4s linear infinite;
+        }
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
