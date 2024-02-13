@@ -1,0 +1,79 @@
+[
+  {
+    "logo": "footer/logo.png",
+    "description": "A gym, also known as a fitness center or health club, is a facility dedicated to physical fitness and exercise gyms and typically offer a range",
+    "socialIcons": [
+      {
+        "link": "#",
+        "icon": "faFacebookF"
+      },
+      {
+        "link": "#",
+        "icon": "faTwitter"
+      },
+      {
+        "link": "#",
+        "icon": "faInstagram"
+      },
+      {
+        "link": "#",
+        "icon": "faGoogle"
+      }
+    ],
+    "UsefulHeading":"Useful Links",
+    "usefulLinksWidget": {
+      "links": [
+        {
+          "label": "Home",
+          "url": "index-1.html"
+        },
+        {
+          "label": "About us",
+          "url": "about.html"
+        },
+        {
+          "label": "Services",
+          "url": "#"
+        },
+        {
+          "label": "Blog",
+          "url": "#"
+        },
+        {
+          "label": "Contact",
+          "url": "#"
+        }
+      ]
+    },
+    "contactUs": "Contact Us",
+    "contactWidget": "Master-builder of human happiness one rejects, dislikesor",
+    "contactDetails": {
+      "address": "Str.6 Chalingt Gates,Supper market Germany",
+      "email": "contact@gmail.com",
+      "phone": "+012 (4567) 789"
+    },
+    "NewsletterHeading":"Newsletters",
+    "newsletterWidget": {
+      "description": "Neque porro quisquam doe psu quia dolor amet consect",
+      "formPlaceholder": "Enter Your Email",
+      "subscribeButton": "subscribe"
+    },
+    "copyrightText": "Copyright fitness ©2024. All Rights Reserved",
+    "gymee": "FITNESS",
+    "text": "©2020. All Rights Reserved",
+    "footerMenuLinks": [
+      {
+        "label": "Privacy",
+        "url": "#"
+      },
+      {
+        "label": "Terms Of Services",
+        "url": "#"
+      },
+      {
+        "label": "Accessibility",
+        "url": "#"
+      }
+    ]
+  }
+]
