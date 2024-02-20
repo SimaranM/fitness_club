@@ -1,0 +1,175 @@
+.whywe-section {
+    padding: 120px 0px 120px 0px;
+    background-image: url(../images/whywe/service-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.whywe-section .elementor-widget-wrap {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.whywe-section .thumb {
+    position: relative;
+    padding: 0 43px 40px 0;
+    margin-right: 10px;
+}
+.whywe-section .thumb .img-2 {
+    position: absolute;
+    left: -105px;
+    top: 94px;
+    border-radius: 20px;
+}
+.whywe-section .img-2 img {
+    height: auto;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+.whywe-section .thumb .box {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.whywe-section .thumb .box {
+    align-self: flex-end;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background: var(--gradient-background);
+    transform-origin: bottom;
+    border-radius: 20px;
+    padding: 40px 68px 40px 40px;
+    display: inline-flex;
+    align-items: center;
+}
+.whywe-section .thumb .bounce-1 {
+    animation-name: bounce-1;
+    animation-timing-function: linear;
+}
+@keyframes bounce-1 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.whywe-section .thumb .box .icon {
+    padding-right: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.31);
+    margin-right: 20px;
+}
+.whywe-section .thumb .box .whywe-year {
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--light);
+    margin-bottom: -5px;
+    margin-top: -0.3em;
+}
+.whywe-section .thumb .box .whywe-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--light);
+    text-transform: uppercase;
+    margin-bottom: -0.4em;
+    display: block;
+}
+
+.whywe-section .accordion .text .sub-title {
+    display: inline-block;
+    line-height: 1.2;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 14px;
+    position: relative;
+    padding: 8px 20px 6px;
+    font-weight: 500;
+    margin-bottom: 26px;
+    letter-spacing: 0.05em;
+    background: var(--light);
+    box-shadow: 0px 8px 19px rgba(0, 0, 0, 0.07);
+    border-radius: 50px;
+}
+
+.whywe-section .accordion .text .sec-title {
+    color: var(--light);
+    margin-bottom: 20px;
+    font-size: 48px;
+}
+.whywe-section .accordion .text .sec-text {
+    font-size: 16px;
+    margin-top: 30px;
+    line-height: 1.667;
+    color: var(--light);
+}
+.whywe-section .accordion .accordion-card {
+    margin-bottom: 20px;
+    transition: 0.4s ease-in-out;
+    overflow: hidden;
+    background: var(--bg-black);
+    border: 1px solid var(--bg-black);
+    border-radius: 10px;
+}
+.whywe-section .accordion .accordion-card .accordion-header {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--light);
+    padding: 12px 65px 12px 30px;
+    min-height: 80px;
+    gap: 10px;
+}
+.whywe-section .accordion .accordion-card .accordion-button {
+    font-weight: 500;
+    color: var(--light);
+    padding: 10px 6px 10px 6px;
+    border: 0;
+    background-color: rgb(24, 24, 24);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+.whywe-section .accordion .accordion-card .accordion-button:hover {
+    transform: rotate(0);
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.whywe-section .accordion .accordion-button:not(.collapsed) {
+    box-shadow: unset;
+}
+@media (max-width: 976px) {
+    .whywe-section .main-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .whywe-section .thumb {
+        height: auto;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0px;
+    }
+    .whywe-section .thumb .img-2 {
+        left: 0;
+    }
+}
+@media (max-width: 767px){
+    .whywe-section .thumb .box {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 575px) {
+    .whywe-section .thumb .img-2 {
+        width: 200px;
+    }
+}

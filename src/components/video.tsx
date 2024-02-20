@@ -88,8 +88,8 @@ const VideoSection: React.FC = () => {
         </div>
         <div className="row">
           <div className="col-xl-12">
-            <div className="video-wrap mb--130">
-              {videoImage && <GatsbyImage image={videoImage} alt="" />}
+            <div className="video-wrap">
+              {videoImage && <GatsbyImage image={videoImage} alt="" style={{width: "2000"}}  />}
               <div className="video-play">
                 <a href="" className="popup-video">
                   <FontAwesomeIcon icon={faPlay} />

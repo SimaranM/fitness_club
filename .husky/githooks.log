@@ -149,3 +149,24 @@ chore: Create about component
 2024-02-13 08:41:35,739 - INFO     [commit-msg] - Subject's format is valid
 2024-02-13 08:41:35,739 - INFO     [commit-msg] - Commit type is valid
 2024-02-13 08:41:35,739 - INFO     [commit-msg] - Commit message is valid
+2024-02-13 12:56:04,004 - INFO     [prepare-commit-msg] - Reading commit message file
+2024-02-13 12:56:04,004 - INFO     [prepare-commit-msg] - Prepare commit message
+2024-02-13 12:56:04,004 - DEBUG    [prepare-commit-msg] - Content to prepare:
+['Create footer component']
+2024-02-13 12:56:04,004 - INFO     [prepare-commit-msg] - Commit message with subject only
+2024-02-13 12:56:04,058 - WARNING  [prepare-commit-msg] - Missing valid prefix in branch name. Commit type is set to: chore
+2024-02-13 12:56:04,059 - DEBUG    [prepare-commit-msg] - Missing commit type in subject line
+2024-02-13 12:56:04,059 - INFO     [prepare-commit-msg] - Adding commit type to subject line: chore
+2024-02-13 12:56:04,059 - DEBUG    [prepare-commit-msg] - Commit message with added commit type:
+['chore: Create footer component']
+2024-02-13 12:56:04,059 - INFO     [prepare-commit-msg] - Missing issue-ID in branch name.
+2024-02-13 12:56:04,060 - INFO     [prepare-commit-msg] - Writing commit message file
+2024-02-13 12:56:04,060 - DEBUG    [prepare-commit-msg] - Updated commit message:
+chore: Create footer component
+2024-02-13 12:56:04,285 - DEBUG    [commit-msg] - Content without comments:
+chore: Create footer component
+2024-02-13 12:56:04,286 - INFO     [commit-msg] - Commit message contains subject only
+2024-02-13 12:56:04,286 - WARNING  [commit-msg] - Issue-ID is optional, but useful for PM tools
+2024-02-13 12:56:04,286 - INFO     [commit-msg] - Subject's format is valid
+2024-02-13 12:56:04,286 - INFO     [commit-msg] - Commit type is valid
+2024-02-13 12:56:04,287 - INFO     [commit-msg] - Commit message is valid

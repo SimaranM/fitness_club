@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faTwitter, faInstagram, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPhone, faHouse } from "@fortawesome/free-solid-svg-icons";
 import CustomButton from "./CustomButton";
-
 import "../styles/footer.scss";
 
 interface FooterMenuLink {

@@ -81,7 +81,7 @@ const Team: React.FC = () => {
                 <div className="team-content pt-5">
                     <div className="row">
                         {teamData.team.map((teamMember, index) => (
-                            <div className="col-lg-4 col-md-6 col-sm-6 team-container" key={index}>
+                            <div className="col-lg-4 col-md-6 col-sm-6 team-container mb-3" key={index}>
                                 <div className="team-box effect-item mt-40">
                                     <div className="team-item ">
                                         <ul>
