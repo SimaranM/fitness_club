@@ -1,0 +1,40 @@
+[
+    {
+        "mainTitle": "Gallery",
+        "title": "Recent Project Let’s See Our Photo Gallery",
+        "button": "  LEARN MORE",
+        "lernmoreIcon": "faArrowRight",
+        "gallery": [
+            {
+                "image": "gallery1",
+                "icon": "faArrowRight",
+                "name": "Women Fitness Gallery",
+                "desc": "Fitness, Women"
+            },
+            {
+                "image": "gallery2",
+                "icon": "faArrowRight",
+                "name": "Men Fitness Gallery",
+                "desc": "Fitness, Men"
+            },
+            {
+                "image": "gallery3",
+                "icon": "faArrowRight",
+                "name": "Men Fitness Gallery",
+                "desc": "Fitness, Men"
+            },
+            {
+                "image": "gallery4",
+                "icon": "faArrowRight",
+                "name": "Women Fitness Gallery",
+                "desc": "Fitness, Women"
+            },
+            {
+                "image": "gallery5",
+                "icon": "faArrowRight",
+                "name": "Dumbbelling Gallery",
+                "desc": "Fitness, Women"
+            }
+        ]
+    }
+]

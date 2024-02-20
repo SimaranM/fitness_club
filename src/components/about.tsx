@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import png from "../images/about/customer.png"
+import AboutSmall from "../images/about/aboutSmall.png"
+import AboutBig from "../images/about/aboutBig.png"
 import "../styles/about.scss";
 
 
@@ -12,17 +14,17 @@ const About: React.FC = () => {
         <section className="about">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-xl-6 col-lg-6">
                         <div className="about-image-wrapper">
                             <div className="container">
                                 <div className="about-thumb mb-5 mb-lg-0">
-                                    <img decoding="async" className="about-img-1" src="https://wptf.themepul.co/fitmas/wp-content/uploads/2023/07/about_1-1-2.png" />
-                                    <img decoding="async" className="about-img-2 jumpImage" src="https://wptf.themepul.co/fitmas/wp-content/uploads/2023/07/about_1-2-1.png" />
+                                    <img className="about-img-1" src={AboutBig} />
+                                    <img className="about-img-2 jumpImage" src={AboutSmall} />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-xl-6 col-lg-6">
                         <div className="about-content-wrapper">
                             <div className="container">
                                 <div className="about-content">
@@ -38,7 +40,7 @@ const About: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="container mission">
+                        <div className="mission">
                             <div className="about-tab-1">
                                 <div className="filter-menu-active">
                                     <button data-filter=".cat1" type="button" className="btn btn-primary active"> Our Mission </button>

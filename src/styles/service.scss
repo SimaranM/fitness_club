@@ -1,6 +1,10 @@
 .service {
     padding-bottom: 100px;
-    padding-top: 100px;
+    padding-top: 200px;
+    background-image: url(../images/service/service-bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 
     .sub-title {
         display: inline-block;
@@ -21,8 +25,10 @@
     .sec-title {
         margin-bottom: 30px;
         margin-top: -0.23em;
+        font-size: 45px;
         font-weight: 500;
         line-height: 58px;
+        color: var(--light-gray);
     }
 
     .service-card:hover {
@@ -104,6 +110,57 @@
                 margin-left: 0;
                 transition: 0.4s;
             }
+        }
+    }
+}
+
+@media screen and (width <=797px) {
+    .service {
+        .sec-title {
+            font-size: 35px;
+        }
+        .service-card_text {
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+    }
+    .service-card.style2 {
+        .service-card_title {
+            a {
+              font-size: 20px;
+            }
+        }
+        .link-btn {
+           font-size: 13px;
+           .icon {
+            padding: 14px;
+        }
+        }
+    }
+}
+
+@media only screen and (width <=400px) {
+    .service {
+        .sec-title {
+            font-size: 30px;
+        }
+        .service-card_text {
+            margin-bottom: 20px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+    }
+    .service-card.style2 {
+        .service-card_title {
+            a {
+              font-size: 18px;
+            }
+        }
+        .link-btn {
+           font-size: 12px;
+           .icon {
+            padding: 10px;
+        }
         }
     }
 }

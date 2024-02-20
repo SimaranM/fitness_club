@@ -5,10 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import "../styles/service.scss";
 import 'swiper/css/pagination';
-import { Autoplay } from 'swiper/modules';
-
+import { Autoplay, Pagination } from 'swiper/modules';
+import "../styles/service.scss";
 
 interface ServiceImageData {
     name: string;
@@ -54,7 +53,7 @@ const Service: React.FC = () => {
 
     const serviceData = data.allServiceJson.nodes[0];
     return (
-        <section className="service">
+        <section className="service bg-fix pt-130 pb-100">
             <div className="container">
                 <div className="section-head style-1 text-center">
                     <span className="sub-title">{serviceData.sub_title}</span>
@@ -63,7 +62,24 @@ const Service: React.FC = () => {
                 <Swiper
                     slidesPerView={3}
                     spaceBetween={30}
-                    autoplay={true}
+                    breakpoints={{
+                        '@0.00': {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        '@0.75': {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        '@1.00': {
+                            slidesPerView: 2,
+                            spaceBetween: 40,
+                        },
+                        '@1.50': {
+                            slidesPerView: 3,
+                            spaceBetween: 50,
+                        },
+                    }}
                     modules={[Autoplay]}
                     className="mySwiper"
                 >

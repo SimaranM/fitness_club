@@ -173,3 +173,8 @@ p {
     margin: 0 7px;
   }
 }
+@media only screen and (width <=400px) {
+  .team-area .section-title p {
+    font-size: 18px;
+  }
+}

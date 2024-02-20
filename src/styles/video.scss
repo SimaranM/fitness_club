@@ -120,3 +120,47 @@
         }
     }
 }
+@media (min-width: 768px) and (max-width: 991px){
+    .section-title {
+        margin-bottom: 50px;
+        h3 {
+            font-size: 40px;
+        }
+    }
+    .video-shape {
+    display: none;
+
+    }
+}
+@media screen and (width >=798px) {
+    .section-title {
+        margin-bottom: 50px;
+        h3 {
+            font-size: 40px;
+        }
+    }
+   
+}
+
+@media screen and (width <=797px) {
+    .section-title {
+        margin-bottom: 50px;
+        h3 {
+            font-size: 30px;
+        }
+    }
+    .video-shape {
+        display: none;
+    }
+}
+
+@media only screen and (width <=600px) {
+}
+
+@media only screen and (width <=400px) {
+    .section-title {
+        h3 {
+            font-size: 25px;
+        }
+    }
+}
