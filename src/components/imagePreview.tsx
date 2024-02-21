@@ -8,7 +8,17 @@ interface ImagePreviewProps {
 }
 
 const ImagePreview: React.FC<ImagePreviewProps> = ({ image, imagePath }) => {
-    return <>{image && <GatsbyImage image={image} alt={imagePath} className="content-overlay" />}</>;
+    return (
+        <>
+            {image && (
+                <GatsbyImage
+                    image={image}
+                    alt={imagePath}
+                    className="content-overlay"
+                />
+            )}
+        </>
+    );
 };
 
 export default ImagePreview;

@@ -20,7 +20,7 @@
         "icon": "faGoogle"
       }
     ],
-    "UsefulHeading":"Useful Links",
+    "UsefulHeading": "Useful Links",
     "usefulLinksWidget": {
       "links": [
         {
@@ -47,12 +47,21 @@
     },
     "contactUs": "Contact Us",
     "contactWidget": "Master-builder of human happiness one rejects, dislikesor",
-    "contactDetails": {
-      "address": "Str.6 Chalingt Gates,Supper market Germany",
-      "email": "contact@gmail.com",
-      "phone": "+012 (4567) 789"
-    },
-    "NewsletterHeading":"Newsletters",
+    "contactDetails": [
+      {
+        "text": "Str.6 Chalingt Gates,Supper market Germany",
+        "icon": "faHouse"
+      },
+      {
+        "text": "contact@gmail.com",
+        "icon": "faEnvelope"
+      },
+      {
+        "text": "+012 (4567) 789",
+        "icon": "faPhone"
+      }
+    ],
+    "NewsletterHeading": "Newsletters",
     "newsletterWidget": {
       "description": "Neque porro quisquam doe psu quia dolor amet consect",
       "formPlaceholder": "Enter Your Email",

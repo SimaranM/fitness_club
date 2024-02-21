@@ -1,0 +1,35 @@
+[
+  {
+    "contact": "Rufen Sie uns an",
+    "phone": "+49 176 40569040",
+    "buttonName": "PreisListe",
+    "navbar": {
+      "links": [
+        {
+          "linkName": "Home",
+          "linkURL": "/"
+        },
+        {
+          "linkName": "Über uns",
+          "linkURL": "/#about"
+        },
+        {
+          "linkName": "Leistungen",
+          "linkURL": "/#service"
+        },
+        {
+          "linkName": "Team",
+          "linkURL": "/#team"
+        },
+        {
+          "linkName": "Bildergalerie",
+          "linkURL": "/#gallery"
+        },
+        {
+          "linkName": "Kontakt uns",
+          "linkURL": "/#contact"
+        }
+      ]
+    }
+  }
+]

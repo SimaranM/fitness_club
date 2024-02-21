@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faDumbbell } from "@fortawesome/free-solid-svg-icons";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
 import "../styles/service.scss";
 
 interface ServiceImageData {
@@ -26,32 +27,34 @@ interface SwiperSlideData {
 
 const Service: React.FC = () => {
     const data = useStaticQuery(graphql`
-    query {
-        allServiceJson {
-            nodes {
-              sub_title
-              sec_title
-              Swiper {
-                heading
-                dec
-                icon
-                image
-                text
-              }
-            }
-          }
-          Service: allFile(  filter: { relativeDirectory: { eq: "service" } }  ) {
-            nodes {
-                childImageSharp {
-                    gatsbyImageData(width: 70)
+        query {
+            allServiceJson {
+                nodes {
+                    sub_title
+                    sec_title
+                    Swiper {
+                        heading
+                        dec
+                        icon
+                        image
+                        text
+                    }
                 }
-                name
+            }
+            Service: allFile(filter: { relativeDirectory: { eq: "service" } }) {
+                nodes {
+                    childImageSharp {
+                        gatsbyImageData(width: 70)
+                    }
+                    name
+                }
             }
         }
-    }
-  `);
+    `);
 
     const serviceData = data.allServiceJson.nodes[0];
+    const iconMapping: Record<string, IconDefinition> = { faArrowRight };
+
     return (
         <section className="service bg-fix pt-130 pb-100">
             <div className="container">
@@ -63,51 +66,71 @@ const Service: React.FC = () => {
                     slidesPerView={3}
                     spaceBetween={30}
                     breakpoints={{
-                        '@0.00': {
+                        "@0.00": {
                             slidesPerView: 1,
                             spaceBetween: 10,
                         },
-                        '@0.75': {
+                        "@0.75": {
                             slidesPerView: 2,
                             spaceBetween: 20,
                         },
-                        '@1.00': {
+                        "@1.00": {
                             slidesPerView: 2,
                             spaceBetween: 40,
                         },
-                        '@1.50': {
+                        "@1.50": {
                             slidesPerView: 3,
                             spaceBetween: 50,
                         },
                     }}
                     modules={[Autoplay]}
-                    className="mySwiper"
-                >
-                    {serviceData.Swiper.map((slide: SwiperSlideData, index: number) => {
-                        const thumbImage = data.Service.nodes.find(
-                            (node: ServiceImageData) => node.name === slide.image
-                        );
-                        const serviceImage = thumbImage?.childImageSharp?.gatsbyImageData;
-                        return (
-                            <SwiperSlide key={index}>
-                                <div className="service-card style2">
-                                    <div className="service-card_icon">
-                                        {serviceImage && (
-                                            <GatsbyImage image={serviceImage} alt="" className='fitness-icon' />
-                                        )}
+                    className="mySwiper">
+                    {serviceData.Swiper.map(
+                        (slide: SwiperSlideData, index: number) => {
+                            const thumbImage = data.Service.nodes.find(
+                                (node: ServiceImageData) =>
+                                    node.name === slide.image,
+                            );
+                            const serviceImage =
+                                thumbImage?.childImageSharp?.gatsbyImageData;
+                            return (
+                                <SwiperSlide key={index}>
+                                    <div className="service-card style2">
+                                        <div className="service-card_icon">
+                                            {serviceImage && (
+                                                <GatsbyImage
+                                                    image={serviceImage}
+                                                    alt=""
+                                                    className="fitness-icon"
+                                                />
+                                            )}
+                                        </div>
+                                        <div className="service-card_content">
+                                            <h3 className="service-card_title mb-5">
+                                                <a href="#">{slide.heading}</a>
+                                            </h3>
+                                            <p className="service-card.style2 service-card_text">
+                                                {slide.dec}
+                                            </p>
+                                            <a
+                                                href="#"
+                                                target="_blank"
+                                                rel="nofollow"
+                                                className="link-btn">
+                                                <FontAwesomeIcon
+                                                    icon={
+                                                        iconMapping[slide.icon]
+                                                    }
+                                                    className="icon"
+                                                />
+                                                {slide.text}
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div className="service-card_content">
-                                        <h3 className="service-card_title mb-5"><a href="#">{slide.heading}</a></h3>
-                                        <p className="service-card.style2 service-card_text">{slide.dec}</p>
-                                        <a href="#" target="_blank" rel="nofollow" className="link-btn">
-                                            <FontAwesomeIcon icon={faArrowRight} className='icon' />
-                                            {slide.text}
-                                        </a>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        );
-                    })}
+                                </SwiperSlide>
+                            );
+                        },
+                    )}
                 </Swiper>
             </div>
         </section>

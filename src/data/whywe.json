@@ -1,0 +1,31 @@
+[
+    {
+        "mainTitle": "Why Choose Us?",
+        "title": "WHY CHOOSE US?",
+        "news": "Years Experience",
+        "desc": "Our team of certified fitness professionals is committed to providing you with the highest level of expertise and support.",
+        "icon": "customer.png",
+        "mainImage": "mainImage.png",
+        "absoluteImage": "absoluteImage.png",
+        "whyWe": [
+            {
+                "accordion": "What are your gym,s operating hours?",
+                "desc": "Your goals are our goals. Whether you're aiming to lose weight, build muscle, increase flexibility, or boost your endurance, we are dedicated to helping you achieve the results you desire.",
+                "iconRight": "faArrowRight",
+                "iconDown": "faArrowDown"
+            },
+            {
+                "accordion": "What are your gym,s operating hours?",
+                "desc": "Your goals are our goals. Whether you're aiming to lose weight, build muscle, increase flexibility, or boost your endurance, we are dedicated to helping you achieve the results you desire.",
+                "iconRight": "faArrowRight",
+                "iconDown": "faArrowDown"
+            },
+            {
+                "accordion": "What are your gym,s operating hours?",
+                "desc": "Your goals are our goals. Whether you're aiming to lose weight, build muscle, increase flexibility, or boost your endurance, we are dedicated to helping you achieve the results you desire.",
+                "iconRight": "faArrowRight",
+                "iconDown": "faArrowDown"
+            }
+        ]
+    }
+]
