@@ -1,0 +1,277 @@
+[
+  {
+    "filters": [
+      {
+        "name": "all class",
+        "value": "all"
+      },
+      {
+        "name": "crossfit",
+        "value": "crossfit"
+      },
+      {
+        "name": "lunge ball",
+        "value": "lunge"
+      },
+      {
+        "name": "ppsr",
+        "value": "ppsr"
+      },
+      {
+        "name": "Walls",
+        "value": "walls"
+      },
+      {
+        "name": "Candy",
+        "value": "candy"
+      }
+    ],
+    "tableHeaders": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "pageTitle": "Classtime Table",
+    "tableData": [
+      {
+        "time": "10.00",
+        "schedule": [
+          {
+            "day": "Monday",
+            "timeRange": "10.00 - 14.00",
+            "className": "Crossfit lv1",
+            "tsmeta": "crossfit"
+          },
+          {
+            "day": "Tuesday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Wednesday",
+            "timeRange": "10.00 - 15.00",
+            "className": "Crossfit lv1",
+            "tsmeta": "crossfit"
+          },
+          {
+            "day": "Thursday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Friday",
+            "timeRange": "10.00 - 13.30",
+            "className": "Lunge Ball Bur",
+            "tsmeta": "lunge"
+          },
+          {
+            "day": "Saturday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Sunday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          }
+        ]
+      },
+      {
+        "time": "14.00",
+        "schedule": [
+          {
+            "day": "Monday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Tuesday",
+            "timeRange": "14.00 - 17.00",
+            "className": "Crossfit lv1",
+            "tsmeta": "crossfit"
+          },
+          {
+            "day": "Wednesday",
+            "timeRange": "14.00 - 17.00",
+            "className": "Lunge Ball Bur",
+            "tsmeta": "lunge"
+          },
+          {
+            "day": "Thursday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Friday",
+            "timeRange": "14.00 - 15.30",
+            "className": "Walls to Knees",
+            "tsmeta": "walls"
+          },
+          {
+            "day": "Saturday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Sunday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          }
+        ]
+      },
+      {
+        "time": "16.00",
+        "schedule": [
+          {
+            "day": "Monday",
+            "timeRange": "16.00 - 18.00",
+            "className": "Lunge Ball Bur",
+            "tsmeta": "lunge"
+          },
+          {
+            "day": "Tuesday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Wednesday",
+            "timeRange": "16.00 - 19.00",
+            "className": "Candy",
+            "tsmeta": "candy"
+          },
+          {
+            "day": "Thursday",
+            "timeRange": "16.00 - 19.00",
+            "className": "Candy",
+            "tsmeta": "candy"
+          },
+          {
+            "day": "Friday",
+            "timeRange": "16.00 - 17.00",
+            "className": "Ppsr",
+            "tsmeta": "ppsr"
+          },
+          {
+            "day": "Saturday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Sunday",
+            "timeRange": "20.30 - 23.00",
+            "className": "Walls to Knees",
+            "tsmeta": "walls"
+          }
+        ]
+      },
+      {
+        "time": "18.00",
+        "schedule": [
+          {
+            "day": "Monday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Tuesday",
+            "timeRange": "18.00 - 20.00",
+            "className": "Walls to Knees",
+            "tsmeta": "walls"
+          },
+          {
+            "day": "Wednesday",
+            "timeRange": "18.00 - 20.00",
+            "className": "ppsr",
+            "tsmeta": "ppsr"
+          },
+          {
+            "day": "Thursday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Friday",
+            "timeRange": "18.00 - 22.00",
+            "className": "Chelsea",
+            "tsmeta": "chelsea"
+          },
+          {
+            "day": "Saturday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Sunday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          }
+        ]
+      },
+      {
+        "time": "20.00",
+        "schedule": [
+          {
+            "day": "Monday",
+            "timeRange": "21.00 - 23.00",
+            "className": "Lunge Ball Bur",
+            "tsmeta": "lunge"
+          },
+          {
+            "day": "Tuesday",
+            "timeRange": "20.00 - 22.00",
+            "className": "Walls to Knees",
+            "tsmeta": "walls"
+          },
+          {
+            "day": "Wednesday",
+            "timeRange": "20.30 - 23.00",
+            "className": "Walls to Knees",
+            "tsmeta": "walls"
+          },
+          {
+            "day": "Thursday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          },
+          {
+            "day": "Friday",
+            "timeRange": "22.00 - 23.00",
+            "className": "Crossfit Lv2",
+            "tsmeta": "crossfit"
+          },
+          {
+            "day": "Saturday",
+            "timeRange": "21.00 - 23.00",
+            "className": "Crossfit Lv2",
+            "tsmeta": "crossfit"
+          },
+          {
+            "day": "Sunday",
+            "timeRange": "",
+            "className": "",
+            "tsmeta": ""
+          }
+        ]
+      }
+    ]
+  }
+]

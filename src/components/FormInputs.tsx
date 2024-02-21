@@ -16,7 +16,8 @@ const FormInputs: React.FC<FormInputsProps> = ({ formInputs }) => {
             {formInputs.map((value, index) => (
                 <div key={index} className="col-xl-6">
                     <div className="contact-page-form-input-box mb-4">
-                        <input className="w-100 h-100 p-3 fs-6"
+                        <input
+                            className="w-100 h-100 p-3 fs-6"
                             type={value.type}
                             placeholder={value.placeholder}
                             name={value.name}

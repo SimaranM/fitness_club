@@ -1,22 +1,61 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import mainImage from "../images/whywe/mainImage.png"
-import absolutIemage from "../images/whywe/absoluteImage.png"
-import png from "../images/whywe/customer.png"
 import "../styles/whywe.scss";
 
 interface AccordionItem {
     isOpen: boolean;
 }
 
-const Team: React.FC = () => {
-    const [accordionItems, setAccordionItems] = useState<AccordionItem[]>([
-        { isOpen: false },
-        { isOpen: false },
-        { isOpen: false }
-    ]);
+interface WhyWeData {
+    mainTitle: string;
+    title: string;
+    news: string;
+    desc: string;
+    whyWe: {
+        accordion: string;
+        desc: string;
+        iconRight: string;
+        iconDown: string;
+    }[];
+}
+
+const WhyWe: React.FC = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            allWhyweJson {
+                nodes {
+                    mainTitle
+                    title
+                    news
+                    desc
+                    icon
+                    mainImage
+                    absoluteImage
+                    whyWe {
+                        accordion
+                        desc
+                        iconRight
+                        iconDown
+                    }
+                }
+            }
+            Whywe: allFile(filter: { relativeDirectory: { eq: "whywe" } }) {
+                nodes {
+                    childImageSharp {
+                        gatsbyImageData
+                    }
+                    name
+                }
+            }
+        }
+    `);
+    const [accordionItems, setAccordionItems] = useState<AccordionItem[]>(
+        data.allWhyweJson.nodes[0].whyWe.map(() => ({ isOpen: false })),
+    );
 
     const toggleAccordion = (index: number) => {
         const newAccordionItems = accordionItems.map((item, i) => {
@@ -28,68 +67,153 @@ const Team: React.FC = () => {
         setAccordionItems(newAccordionItems);
     };
 
+    const whyweData: WhyWeData = data.allWhyweJson.nodes[0];
+    const iconMapping: Record<string, IconDefinition> = {
+        faArrowRight,
+        faArrowDown,
+    };
+
+    const mainImageNode = data.Whywe.nodes.find(
+        (node: { name: string }) => node.name === "mainImage",
+    ) as { childImageSharp: { gatsbyImageData: IGatsbyImageData } } | undefined;
+
+    const absoluteImageNode = data.Whywe.nodes.find(
+        (node: { name: string }) => node.name === "absoluteImage",
+    ) as { childImageSharp: { gatsbyImageData: IGatsbyImageData } } | undefined;
+
+    const iconNode = data.Whywe.nodes.find(
+        (node: { name: string }) => node.name === "customer",
+    ) as { childImageSharp: { gatsbyImageData: IGatsbyImageData } } | undefined;
+
+    const mainImageData: IGatsbyImageData | null = mainImageNode
+        ? getImage(mainImageNode)!
+        : null;
+    const absoluteImageData: IGatsbyImageData | null = absoluteImageNode
+        ? getImage(absoluteImageNode)!
+        : null;
+    const iconImageData: IGatsbyImageData | null = iconNode
+        ? getImage(iconNode)!
+        : null;
+
     return (
         <section className="whywe-section">
             <div className="container">
-                <div className="d-flex main-section">
-                    <div className="elementor">
-                        <div className="elementor-widget-wrap">
-                            <div className="elementor-element">
-                                <div className="widget-container">
-                                    <div className="about-image">
-                                        <div className="container">
-                                            <div className="thumb">
-                                                <img src={mainImage} className="img-1" />
-                                                <div className="img-2 jump">
-                                                    <img src={absolutIemage} className="attachment-full size-full" alt="" />
-                                                </div>
-                                                <div className="box bounce-1">
-                                                    <div className="icon">
-                                                        <img src={png} />
-                                                    </div>
-                                                    <div className="details">
-                                                        <h3 className="whywe-year"><span className="counter-number">25</span> + </h3>
-                                                        <span className="whywe-text"> Years Experience </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                <div className="row">
+                    <div className="col-xl-6 col-lg-6">
+                        <div className="container">
+                            <div className="thumb">
+                                <div className="box1">
+                                    {mainImageData && (
+                                        <GatsbyImage
+                                            image={mainImageData}
+                                            alt="Main Image"
+                                            className="img-1"
+                                        />
+                                    )}
+                                    <div className="img-2 jump">
+                                        {absoluteImageData && (
+                                            <GatsbyImage
+                                                image={absoluteImageData}
+                                                alt="Absolute Image"
+                                                className="attachment-full size-full"
+                                            />
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="box bounce-1">
+                                    <div className="icon">
+                                        {iconImageData && (
+                                            <GatsbyImage
+                                                image={iconImageData}
+                                                alt="Icon"
+                                            />
+                                        )}
+                                    </div>
+                                    <div className="details">
+                                        <h3 className="whywe-year">
+                                            <span className="counter-number">
+                                                25
+                                            </span>{" "}
+                                            +{" "}
+                                        </h3>
+                                        <span className="whywe-text">
+                                            {whyweData.news}{" "}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="accordion">
-                        <div className="mb-5">
-                            <div className="container text">
-                                <span className="sub-title"> WHY CHOOSE US? </span>
-                                <h2 className="sec-title"> Why Choose Us? </h2>
-                                <div className="sec-text"> Our team of certified fitness professionals is committed to providing you with the highest level of expertise and support. </div>
+                    <div className="col-xl-6 col-lg-6 accordion p-5">
+                        <div className="container mb-5">
+                            <div className=" text">
+                                <span className="sub-title">
+                                    {" "}
+                                    {whyweData.title}{" "}
+                                </span>
+                                <h2 className="sec-title">
+                                    {" "}
+                                    {whyweData.mainTitle}{" "}
+                                </h2>
+                                <div className="sec-text mb-5">
+                                    {" "}
+                                    {whyweData.desc}{" "}
+                                </div>
                             </div>
-                        </div>
-                        <div className="container">
-                            <div className="accordion-area accordion" id="faqAccordion">
-                                <div className="accordion-area accordion" id="faqAccordion">
-                                    {accordionItems.map((item, index) => (
-                                        <div className={`accordion accordion-card ${item.isOpen ? 'active' : ''}`} key={index}>
-                                            <div className="accordion-header d-flex justify-content-between align-items-center" onClick={() => toggleAccordion(index)}>
-                                                <div>
-                                                    What are your gym,s operating hours?
-                                                </div>
-                                                <div>
-                                                    {item.isOpen ? <FontAwesomeIcon icon={faArrowDown} className="accordion-button" /> : <FontAwesomeIcon icon={faArrowRight} className="accordion-button" />}
+                            <div
+                                className="accordion-area accordion"
+                                id="faqAccordion">
+                                {whyweData.whyWe.map((item, index) => (
+                                    <div
+                                        className={`accordion accordion-card ${
+                                            accordionItems[index].isOpen
+                                                ? "active"
+                                                : ""
+                                        }`}
+                                        key={index}>
+                                        <div
+                                            className="accordion-header d-flex justify-content-between align-items-center"
+                                            onClick={() =>
+                                                toggleAccordion(index)
+                                            }>
+                                            <div>{item.accordion}</div>
+                                            <div>
+                                                {" "}
+                                                {accordionItems[index]
+                                                    .isOpen ? (
+                                                    <FontAwesomeIcon
+                                                        icon={
+                                                            iconMapping[
+                                                                item.iconDown
+                                                            ]
+                                                        }
+                                                        className="accordion-button"
+                                                    />
+                                                ) : (
+                                                    <FontAwesomeIcon
+                                                        icon={
+                                                            iconMapping[
+                                                                item.iconRight
+                                                            ]
+                                                        }
+                                                        className="accordion-button"
+                                                    />
+                                                )}
+                                            </div>
+                                        </div>
+                                        {accordionItems[index].isOpen && (
+                                            <div
+                                                id={`collapse-${index}`}
+                                                className="accordion-collapse collapse show">
+                                                <div className="accordion-body">
+                                                    <p className="faq-text">
+                                                        {item.desc}
+                                                    </p>
                                                 </div>
                                             </div>
-                                            {item.isOpen && (
-                                                <div id={`collapse-${index}`} className="accordion-collapse collapse show">
-                                                    <div className="accordion-body">
-                                                        <p className="faq-text">Your goals are our goals. Whether you're aiming to lose weight, build muscle, increase flexibility, or boost your endurance, we are dedicated to helping you achieve the results you desire.</p>
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                    ))}
-                                </div>
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -99,4 +223,4 @@ const Team: React.FC = () => {
     );
 };
 
-export default Team;
+export default WhyWe;

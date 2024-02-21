@@ -34,6 +34,370 @@ type AVIFOptions = {
   readonly speed: InputMaybe<Scalars['Int']>;
 };
 
+type AboutJson = Node & {
+  readonly absoluteImage: Maybe<Scalars['String']>;
+  readonly allButton: Maybe<ReadonlyArray<Maybe<AboutJsonAllButton>>>;
+  readonly button: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly desc: Maybe<Scalars['String']>;
+  readonly help: Maybe<Scalars['String']>;
+  readonly icon: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly mainImage: Maybe<Scalars['String']>;
+  readonly mainTitle: Maybe<Scalars['String']>;
+  readonly paragraph: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly phoneNum: Maybe<Scalars['String']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+type AboutJsonAllButton = {
+  readonly button: Maybe<Scalars['String']>;
+};
+
+type AboutJsonAllButtonFieldSelector = {
+  readonly button: InputMaybe<FieldSelectorEnum>;
+};
+
+type AboutJsonAllButtonFilterInput = {
+  readonly button: InputMaybe<StringQueryOperatorInput>;
+};
+
+type AboutJsonAllButtonFilterListInput = {
+  readonly elemMatch: InputMaybe<AboutJsonAllButtonFilterInput>;
+};
+
+type AboutJsonAllButtonSortInput = {
+  readonly button: InputMaybe<SortOrderEnum>;
+};
+
+type AboutJsonConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<AboutJsonEdge>;
+  readonly group: ReadonlyArray<AboutJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<AboutJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type AboutJsonConnection_distinctArgs = {
+  field: AboutJsonFieldSelector;
+};
+
+
+type AboutJsonConnection_groupArgs = {
+  field: AboutJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type AboutJsonConnection_maxArgs = {
+  field: AboutJsonFieldSelector;
+};
+
+
+type AboutJsonConnection_minArgs = {
+  field: AboutJsonFieldSelector;
+};
+
+
+type AboutJsonConnection_sumArgs = {
+  field: AboutJsonFieldSelector;
+};
+
+type AboutJsonEdge = {
+  readonly next: Maybe<AboutJson>;
+  readonly node: AboutJson;
+  readonly previous: Maybe<AboutJson>;
+};
+
+type AboutJsonFieldSelector = {
+  readonly absoluteImage: InputMaybe<FieldSelectorEnum>;
+  readonly allButton: InputMaybe<AboutJsonAllButtonFieldSelector>;
+  readonly button: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly desc: InputMaybe<FieldSelectorEnum>;
+  readonly help: InputMaybe<FieldSelectorEnum>;
+  readonly icon: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly mainImage: InputMaybe<FieldSelectorEnum>;
+  readonly mainTitle: InputMaybe<FieldSelectorEnum>;
+  readonly paragraph: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly phoneNum: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type AboutJsonFilterInput = {
+  readonly absoluteImage: InputMaybe<StringQueryOperatorInput>;
+  readonly allButton: InputMaybe<AboutJsonAllButtonFilterListInput>;
+  readonly button: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly desc: InputMaybe<StringQueryOperatorInput>;
+  readonly help: InputMaybe<StringQueryOperatorInput>;
+  readonly icon: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly mainImage: InputMaybe<StringQueryOperatorInput>;
+  readonly mainTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly paragraph: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly phoneNum: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type AboutJsonFilterListInput = {
+  readonly elemMatch: InputMaybe<AboutJsonFilterInput>;
+};
+
+type AboutJsonGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<AboutJsonEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<AboutJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<AboutJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type AboutJsonGroupConnection_distinctArgs = {
+  field: AboutJsonFieldSelector;
+};
+
+
+type AboutJsonGroupConnection_groupArgs = {
+  field: AboutJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type AboutJsonGroupConnection_maxArgs = {
+  field: AboutJsonFieldSelector;
+};
+
+
+type AboutJsonGroupConnection_minArgs = {
+  field: AboutJsonFieldSelector;
+};
+
+
+type AboutJsonGroupConnection_sumArgs = {
+  field: AboutJsonFieldSelector;
+};
+
+type AboutJsonSortInput = {
+  readonly absoluteImage: InputMaybe<SortOrderEnum>;
+  readonly allButton: InputMaybe<AboutJsonAllButtonSortInput>;
+  readonly button: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly desc: InputMaybe<SortOrderEnum>;
+  readonly help: InputMaybe<SortOrderEnum>;
+  readonly icon: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly mainImage: InputMaybe<SortOrderEnum>;
+  readonly mainTitle: InputMaybe<SortOrderEnum>;
+  readonly paragraph: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly phoneNum: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type BannerJson = Node & {
+  readonly absoluteImage: Maybe<Scalars['String']>;
+  readonly allButton: Maybe<ReadonlyArray<Maybe<BannerJsonAllButton>>>;
+  readonly button: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly desc: Maybe<Scalars['String']>;
+  readonly help: Maybe<Scalars['String']>;
+  readonly icon: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly mainImage: Maybe<Scalars['String']>;
+  readonly mainTitle: Maybe<Scalars['String']>;
+  readonly paragraph: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly phoneNum: Maybe<Scalars['String']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+type BannerJsonAllButton = {
+  readonly button: Maybe<Scalars['String']>;
+};
+
+type BannerJsonAllButtonFieldSelector = {
+  readonly button: InputMaybe<FieldSelectorEnum>;
+};
+
+type BannerJsonAllButtonFilterInput = {
+  readonly button: InputMaybe<StringQueryOperatorInput>;
+};
+
+type BannerJsonAllButtonFilterListInput = {
+  readonly elemMatch: InputMaybe<BannerJsonAllButtonFilterInput>;
+};
+
+type BannerJsonAllButtonSortInput = {
+  readonly button: InputMaybe<SortOrderEnum>;
+};
+
+type BannerJsonConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<BannerJsonEdge>;
+  readonly group: ReadonlyArray<BannerJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<BannerJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type BannerJsonConnection_distinctArgs = {
+  field: BannerJsonFieldSelector;
+};
+
+
+type BannerJsonConnection_groupArgs = {
+  field: BannerJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type BannerJsonConnection_maxArgs = {
+  field: BannerJsonFieldSelector;
+};
+
+
+type BannerJsonConnection_minArgs = {
+  field: BannerJsonFieldSelector;
+};
+
+
+type BannerJsonConnection_sumArgs = {
+  field: BannerJsonFieldSelector;
+};
+
+type BannerJsonEdge = {
+  readonly next: Maybe<BannerJson>;
+  readonly node: BannerJson;
+  readonly previous: Maybe<BannerJson>;
+};
+
+type BannerJsonFieldSelector = {
+  readonly absoluteImage: InputMaybe<FieldSelectorEnum>;
+  readonly allButton: InputMaybe<BannerJsonAllButtonFieldSelector>;
+  readonly button: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly desc: InputMaybe<FieldSelectorEnum>;
+  readonly help: InputMaybe<FieldSelectorEnum>;
+  readonly icon: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly mainImage: InputMaybe<FieldSelectorEnum>;
+  readonly mainTitle: InputMaybe<FieldSelectorEnum>;
+  readonly paragraph: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly phoneNum: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type BannerJsonFilterInput = {
+  readonly absoluteImage: InputMaybe<StringQueryOperatorInput>;
+  readonly allButton: InputMaybe<BannerJsonAllButtonFilterListInput>;
+  readonly button: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly desc: InputMaybe<StringQueryOperatorInput>;
+  readonly help: InputMaybe<StringQueryOperatorInput>;
+  readonly icon: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly mainImage: InputMaybe<StringQueryOperatorInput>;
+  readonly mainTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly paragraph: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly phoneNum: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type BannerJsonFilterListInput = {
+  readonly elemMatch: InputMaybe<BannerJsonFilterInput>;
+};
+
+type BannerJsonGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<BannerJsonEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<BannerJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<BannerJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type BannerJsonGroupConnection_distinctArgs = {
+  field: BannerJsonFieldSelector;
+};
+
+
+type BannerJsonGroupConnection_groupArgs = {
+  field: BannerJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type BannerJsonGroupConnection_maxArgs = {
+  field: BannerJsonFieldSelector;
+};
+
+
+type BannerJsonGroupConnection_minArgs = {
+  field: BannerJsonFieldSelector;
+};
+
+
+type BannerJsonGroupConnection_sumArgs = {
+  field: BannerJsonFieldSelector;
+};
+
+type BannerJsonSortInput = {
+  readonly absoluteImage: InputMaybe<SortOrderEnum>;
+  readonly allButton: InputMaybe<BannerJsonAllButtonSortInput>;
+  readonly button: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly desc: InputMaybe<SortOrderEnum>;
+  readonly help: InputMaybe<SortOrderEnum>;
+  readonly icon: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly mainImage: InputMaybe<SortOrderEnum>;
+  readonly mainTitle: InputMaybe<SortOrderEnum>;
+  readonly paragraph: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly phoneNum: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
 type BlurredOptions = {
   /** Force the output format for the low-res preview. Default is to use the same format as the input. You should rarely need to change this */
   readonly toFormat: InputMaybe<ImageFormat>;
@@ -292,6 +656,220 @@ type ContactJsonSubmitButtonFilterInput = {
 type ContactJsonSubmitButtonSortInput = {
   readonly text: InputMaybe<SortOrderEnum>;
   readonly type: InputMaybe<SortOrderEnum>;
+};
+
+type CourseplanJson = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly filters: Maybe<ReadonlyArray<Maybe<CourseplanJsonFilters>>>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly pageTitle: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly tableData: Maybe<ReadonlyArray<Maybe<CourseplanJsonTableData>>>;
+  readonly tableHeaders: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+};
+
+type CourseplanJsonConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<CourseplanJsonEdge>;
+  readonly group: ReadonlyArray<CourseplanJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<CourseplanJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type CourseplanJsonConnection_distinctArgs = {
+  field: CourseplanJsonFieldSelector;
+};
+
+
+type CourseplanJsonConnection_groupArgs = {
+  field: CourseplanJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type CourseplanJsonConnection_maxArgs = {
+  field: CourseplanJsonFieldSelector;
+};
+
+
+type CourseplanJsonConnection_minArgs = {
+  field: CourseplanJsonFieldSelector;
+};
+
+
+type CourseplanJsonConnection_sumArgs = {
+  field: CourseplanJsonFieldSelector;
+};
+
+type CourseplanJsonEdge = {
+  readonly next: Maybe<CourseplanJson>;
+  readonly node: CourseplanJson;
+  readonly previous: Maybe<CourseplanJson>;
+};
+
+type CourseplanJsonFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly filters: InputMaybe<CourseplanJsonFiltersFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly pageTitle: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly tableData: InputMaybe<CourseplanJsonTableDataFieldSelector>;
+  readonly tableHeaders: InputMaybe<FieldSelectorEnum>;
+};
+
+type CourseplanJsonFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly filters: InputMaybe<CourseplanJsonFiltersFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly pageTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly tableData: InputMaybe<CourseplanJsonTableDataFilterListInput>;
+  readonly tableHeaders: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CourseplanJsonFilterListInput = {
+  readonly elemMatch: InputMaybe<CourseplanJsonFilterInput>;
+};
+
+type CourseplanJsonFilters = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly value: Maybe<Scalars['String']>;
+};
+
+type CourseplanJsonFiltersFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly value: InputMaybe<FieldSelectorEnum>;
+};
+
+type CourseplanJsonFiltersFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly value: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CourseplanJsonFiltersFilterListInput = {
+  readonly elemMatch: InputMaybe<CourseplanJsonFiltersFilterInput>;
+};
+
+type CourseplanJsonFiltersSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly value: InputMaybe<SortOrderEnum>;
+};
+
+type CourseplanJsonGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<CourseplanJsonEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<CourseplanJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<CourseplanJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type CourseplanJsonGroupConnection_distinctArgs = {
+  field: CourseplanJsonFieldSelector;
+};
+
+
+type CourseplanJsonGroupConnection_groupArgs = {
+  field: CourseplanJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type CourseplanJsonGroupConnection_maxArgs = {
+  field: CourseplanJsonFieldSelector;
+};
+
+
+type CourseplanJsonGroupConnection_minArgs = {
+  field: CourseplanJsonFieldSelector;
+};
+
+
+type CourseplanJsonGroupConnection_sumArgs = {
+  field: CourseplanJsonFieldSelector;
+};
+
+type CourseplanJsonSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly filters: InputMaybe<CourseplanJsonFiltersSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly pageTitle: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly tableData: InputMaybe<CourseplanJsonTableDataSortInput>;
+  readonly tableHeaders: InputMaybe<SortOrderEnum>;
+};
+
+type CourseplanJsonTableData = {
+  readonly schedule: Maybe<ReadonlyArray<Maybe<CourseplanJsonTableDataSchedule>>>;
+  readonly time: Maybe<Scalars['String']>;
+};
+
+type CourseplanJsonTableDataFieldSelector = {
+  readonly schedule: InputMaybe<CourseplanJsonTableDataScheduleFieldSelector>;
+  readonly time: InputMaybe<FieldSelectorEnum>;
+};
+
+type CourseplanJsonTableDataFilterInput = {
+  readonly schedule: InputMaybe<CourseplanJsonTableDataScheduleFilterListInput>;
+  readonly time: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CourseplanJsonTableDataFilterListInput = {
+  readonly elemMatch: InputMaybe<CourseplanJsonTableDataFilterInput>;
+};
+
+type CourseplanJsonTableDataSchedule = {
+  readonly className: Maybe<Scalars['String']>;
+  readonly day: Maybe<Scalars['String']>;
+  readonly timeRange: Maybe<Scalars['String']>;
+  readonly tsmeta: Maybe<Scalars['String']>;
+};
+
+type CourseplanJsonTableDataScheduleFieldSelector = {
+  readonly className: InputMaybe<FieldSelectorEnum>;
+  readonly day: InputMaybe<FieldSelectorEnum>;
+  readonly timeRange: InputMaybe<FieldSelectorEnum>;
+  readonly tsmeta: InputMaybe<FieldSelectorEnum>;
+};
+
+type CourseplanJsonTableDataScheduleFilterInput = {
+  readonly className: InputMaybe<StringQueryOperatorInput>;
+  readonly day: InputMaybe<StringQueryOperatorInput>;
+  readonly timeRange: InputMaybe<StringQueryOperatorInput>;
+  readonly tsmeta: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CourseplanJsonTableDataScheduleFilterListInput = {
+  readonly elemMatch: InputMaybe<CourseplanJsonTableDataScheduleFilterInput>;
+};
+
+type CourseplanJsonTableDataScheduleSortInput = {
+  readonly className: InputMaybe<SortOrderEnum>;
+  readonly day: InputMaybe<SortOrderEnum>;
+  readonly timeRange: InputMaybe<SortOrderEnum>;
+  readonly tsmeta: InputMaybe<SortOrderEnum>;
+};
+
+type CourseplanJsonTableDataSortInput = {
+  readonly schedule: InputMaybe<CourseplanJsonTableDataScheduleSortInput>;
+  readonly time: InputMaybe<SortOrderEnum>;
 };
 
 type DateQueryOperatorInput = {
@@ -624,12 +1202,20 @@ type File = Node & {
   readonly blksize: Maybe<Scalars['Int']>;
   readonly blocks: Maybe<Scalars['Int']>;
   readonly changeTime: Scalars['Date'];
+  /** Returns the first child node of type AboutJson or null if there are no children of given type on this node */
+  readonly childAboutJson: Maybe<AboutJson>;
+  /** Returns the first child node of type BannerJson or null if there are no children of given type on this node */
+  readonly childBannerJson: Maybe<BannerJson>;
   /** Returns the first child node of type ContactJson or null if there are no children of given type on this node */
   readonly childContactJson: Maybe<ContactJson>;
+  /** Returns the first child node of type CourseplanJson or null if there are no children of given type on this node */
+  readonly childCourseplanJson: Maybe<CourseplanJson>;
   /** Returns the first child node of type FooterJson or null if there are no children of given type on this node */
   readonly childFooterJson: Maybe<FooterJson>;
   /** Returns the first child node of type GalleryJson or null if there are no children of given type on this node */
   readonly childGalleryJson: Maybe<GalleryJson>;
+  /** Returns the first child node of type HeaderJson or null if there are no children of given type on this node */
+  readonly childHeaderJson: Maybe<HeaderJson>;
   /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   readonly childImageSharp: Maybe<ImageSharp>;
   /** Returns the first child node of type ServiceJson or null if there are no children of given type on this node */
@@ -638,13 +1224,23 @@ type File = Node & {
   readonly childTeamJson: Maybe<TeamJson>;
   /** Returns the first child node of type VideoJson or null if there are no children of given type on this node */
   readonly childVideoJson: Maybe<VideoJson>;
+  /** Returns the first child node of type WhyweJson or null if there are no children of given type on this node */
+  readonly childWhyweJson: Maybe<WhyweJson>;
   readonly children: ReadonlyArray<Node>;
+  /** Returns all children nodes filtered by type AboutJson */
+  readonly childrenAboutJson: Maybe<ReadonlyArray<Maybe<AboutJson>>>;
+  /** Returns all children nodes filtered by type BannerJson */
+  readonly childrenBannerJson: Maybe<ReadonlyArray<Maybe<BannerJson>>>;
   /** Returns all children nodes filtered by type ContactJson */
   readonly childrenContactJson: Maybe<ReadonlyArray<Maybe<ContactJson>>>;
+  /** Returns all children nodes filtered by type CourseplanJson */
+  readonly childrenCourseplanJson: Maybe<ReadonlyArray<Maybe<CourseplanJson>>>;
   /** Returns all children nodes filtered by type FooterJson */
   readonly childrenFooterJson: Maybe<ReadonlyArray<Maybe<FooterJson>>>;
   /** Returns all children nodes filtered by type GalleryJson */
   readonly childrenGalleryJson: Maybe<ReadonlyArray<Maybe<GalleryJson>>>;
+  /** Returns all children nodes filtered by type HeaderJson */
+  readonly childrenHeaderJson: Maybe<ReadonlyArray<Maybe<HeaderJson>>>;
   /** Returns all children nodes filtered by type ImageSharp */
   readonly childrenImageSharp: Maybe<ReadonlyArray<Maybe<ImageSharp>>>;
   /** Returns all children nodes filtered by type ServiceJson */
@@ -653,6 +1249,8 @@ type File = Node & {
   readonly childrenTeamJson: Maybe<ReadonlyArray<Maybe<TeamJson>>>;
   /** Returns all children nodes filtered by type VideoJson */
   readonly childrenVideoJson: Maybe<ReadonlyArray<Maybe<VideoJson>>>;
+  /** Returns all children nodes filtered by type WhyweJson */
+  readonly childrenWhyweJson: Maybe<ReadonlyArray<Maybe<WhyweJson>>>;
   readonly ctime: Scalars['Date'];
   readonly ctimeMs: Scalars['Float'];
   readonly dev: Scalars['Int'];
@@ -795,21 +1393,31 @@ type FileFieldSelector = {
   readonly blksize: InputMaybe<FieldSelectorEnum>;
   readonly blocks: InputMaybe<FieldSelectorEnum>;
   readonly changeTime: InputMaybe<FieldSelectorEnum>;
+  readonly childAboutJson: InputMaybe<AboutJsonFieldSelector>;
+  readonly childBannerJson: InputMaybe<BannerJsonFieldSelector>;
   readonly childContactJson: InputMaybe<ContactJsonFieldSelector>;
+  readonly childCourseplanJson: InputMaybe<CourseplanJsonFieldSelector>;
   readonly childFooterJson: InputMaybe<FooterJsonFieldSelector>;
   readonly childGalleryJson: InputMaybe<GalleryJsonFieldSelector>;
+  readonly childHeaderJson: InputMaybe<HeaderJsonFieldSelector>;
   readonly childImageSharp: InputMaybe<ImageSharpFieldSelector>;
   readonly childServiceJson: InputMaybe<ServiceJsonFieldSelector>;
   readonly childTeamJson: InputMaybe<TeamJsonFieldSelector>;
   readonly childVideoJson: InputMaybe<VideoJsonFieldSelector>;
+  readonly childWhyweJson: InputMaybe<WhyweJsonFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
+  readonly childrenAboutJson: InputMaybe<AboutJsonFieldSelector>;
+  readonly childrenBannerJson: InputMaybe<BannerJsonFieldSelector>;
   readonly childrenContactJson: InputMaybe<ContactJsonFieldSelector>;
+  readonly childrenCourseplanJson: InputMaybe<CourseplanJsonFieldSelector>;
   readonly childrenFooterJson: InputMaybe<FooterJsonFieldSelector>;
   readonly childrenGalleryJson: InputMaybe<GalleryJsonFieldSelector>;
+  readonly childrenHeaderJson: InputMaybe<HeaderJsonFieldSelector>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFieldSelector>;
   readonly childrenServiceJson: InputMaybe<ServiceJsonFieldSelector>;
   readonly childrenTeamJson: InputMaybe<TeamJsonFieldSelector>;
   readonly childrenVideoJson: InputMaybe<VideoJsonFieldSelector>;
+  readonly childrenWhyweJson: InputMaybe<WhyweJsonFieldSelector>;
   readonly ctime: InputMaybe<FieldSelectorEnum>;
   readonly ctimeMs: InputMaybe<FieldSelectorEnum>;
   readonly dev: InputMaybe<FieldSelectorEnum>;
@@ -850,21 +1458,31 @@ type FileFilterInput = {
   readonly blksize: InputMaybe<IntQueryOperatorInput>;
   readonly blocks: InputMaybe<IntQueryOperatorInput>;
   readonly changeTime: InputMaybe<DateQueryOperatorInput>;
+  readonly childAboutJson: InputMaybe<AboutJsonFilterInput>;
+  readonly childBannerJson: InputMaybe<BannerJsonFilterInput>;
   readonly childContactJson: InputMaybe<ContactJsonFilterInput>;
+  readonly childCourseplanJson: InputMaybe<CourseplanJsonFilterInput>;
   readonly childFooterJson: InputMaybe<FooterJsonFilterInput>;
   readonly childGalleryJson: InputMaybe<GalleryJsonFilterInput>;
+  readonly childHeaderJson: InputMaybe<HeaderJsonFilterInput>;
   readonly childImageSharp: InputMaybe<ImageSharpFilterInput>;
   readonly childServiceJson: InputMaybe<ServiceJsonFilterInput>;
   readonly childTeamJson: InputMaybe<TeamJsonFilterInput>;
   readonly childVideoJson: InputMaybe<VideoJsonFilterInput>;
+  readonly childWhyweJson: InputMaybe<WhyweJsonFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
+  readonly childrenAboutJson: InputMaybe<AboutJsonFilterListInput>;
+  readonly childrenBannerJson: InputMaybe<BannerJsonFilterListInput>;
   readonly childrenContactJson: InputMaybe<ContactJsonFilterListInput>;
+  readonly childrenCourseplanJson: InputMaybe<CourseplanJsonFilterListInput>;
   readonly childrenFooterJson: InputMaybe<FooterJsonFilterListInput>;
   readonly childrenGalleryJson: InputMaybe<GalleryJsonFilterListInput>;
+  readonly childrenHeaderJson: InputMaybe<HeaderJsonFilterListInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
   readonly childrenServiceJson: InputMaybe<ServiceJsonFilterListInput>;
   readonly childrenTeamJson: InputMaybe<TeamJsonFilterListInput>;
   readonly childrenVideoJson: InputMaybe<VideoJsonFilterListInput>;
+  readonly childrenWhyweJson: InputMaybe<WhyweJsonFilterListInput>;
   readonly ctime: InputMaybe<DateQueryOperatorInput>;
   readonly ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   readonly dev: InputMaybe<IntQueryOperatorInput>;
@@ -946,21 +1564,31 @@ type FileSortInput = {
   readonly blksize: InputMaybe<SortOrderEnum>;
   readonly blocks: InputMaybe<SortOrderEnum>;
   readonly changeTime: InputMaybe<SortOrderEnum>;
+  readonly childAboutJson: InputMaybe<AboutJsonSortInput>;
+  readonly childBannerJson: InputMaybe<BannerJsonSortInput>;
   readonly childContactJson: InputMaybe<ContactJsonSortInput>;
+  readonly childCourseplanJson: InputMaybe<CourseplanJsonSortInput>;
   readonly childFooterJson: InputMaybe<FooterJsonSortInput>;
   readonly childGalleryJson: InputMaybe<GalleryJsonSortInput>;
+  readonly childHeaderJson: InputMaybe<HeaderJsonSortInput>;
   readonly childImageSharp: InputMaybe<ImageSharpSortInput>;
   readonly childServiceJson: InputMaybe<ServiceJsonSortInput>;
   readonly childTeamJson: InputMaybe<TeamJsonSortInput>;
   readonly childVideoJson: InputMaybe<VideoJsonSortInput>;
+  readonly childWhyweJson: InputMaybe<WhyweJsonSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
+  readonly childrenAboutJson: InputMaybe<AboutJsonSortInput>;
+  readonly childrenBannerJson: InputMaybe<BannerJsonSortInput>;
   readonly childrenContactJson: InputMaybe<ContactJsonSortInput>;
+  readonly childrenCourseplanJson: InputMaybe<CourseplanJsonSortInput>;
   readonly childrenFooterJson: InputMaybe<FooterJsonSortInput>;
   readonly childrenGalleryJson: InputMaybe<GalleryJsonSortInput>;
+  readonly childrenHeaderJson: InputMaybe<HeaderJsonSortInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpSortInput>;
   readonly childrenServiceJson: InputMaybe<ServiceJsonSortInput>;
   readonly childrenTeamJson: InputMaybe<TeamJsonSortInput>;
   readonly childrenVideoJson: InputMaybe<VideoJsonSortInput>;
+  readonly childrenWhyweJson: InputMaybe<WhyweJsonSortInput>;
   readonly ctime: InputMaybe<SortOrderEnum>;
   readonly ctimeMs: InputMaybe<SortOrderEnum>;
   readonly dev: InputMaybe<SortOrderEnum>;
@@ -1004,7 +1632,7 @@ type FooterJson = Node & {
   readonly NewsletterHeading: Maybe<Scalars['String']>;
   readonly UsefulHeading: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
-  readonly contactDetails: Maybe<FooterJsonContactDetails>;
+  readonly contactDetails: Maybe<ReadonlyArray<Maybe<FooterJsonContactDetails>>>;
   readonly contactUs: Maybe<Scalars['String']>;
   readonly contactWidget: Maybe<Scalars['String']>;
   readonly copyrightText: Maybe<Scalars['String']>;
@@ -1061,27 +1689,27 @@ type FooterJsonConnection_sumArgs = {
 };
 
 type FooterJsonContactDetails = {
-  readonly address: Maybe<Scalars['String']>;
-  readonly email: Maybe<Scalars['String']>;
-  readonly phone: Maybe<Scalars['String']>;
+  readonly icon: Maybe<Scalars['String']>;
+  readonly text: Maybe<Scalars['String']>;
 };
 
 type FooterJsonContactDetailsFieldSelector = {
-  readonly address: InputMaybe<FieldSelectorEnum>;
-  readonly email: InputMaybe<FieldSelectorEnum>;
-  readonly phone: InputMaybe<FieldSelectorEnum>;
+  readonly icon: InputMaybe<FieldSelectorEnum>;
+  readonly text: InputMaybe<FieldSelectorEnum>;
 };
 
 type FooterJsonContactDetailsFilterInput = {
-  readonly address: InputMaybe<StringQueryOperatorInput>;
-  readonly email: InputMaybe<StringQueryOperatorInput>;
-  readonly phone: InputMaybe<StringQueryOperatorInput>;
+  readonly icon: InputMaybe<StringQueryOperatorInput>;
+  readonly text: InputMaybe<StringQueryOperatorInput>;
+};
+
+type FooterJsonContactDetailsFilterListInput = {
+  readonly elemMatch: InputMaybe<FooterJsonContactDetailsFilterInput>;
 };
 
 type FooterJsonContactDetailsSortInput = {
-  readonly address: InputMaybe<SortOrderEnum>;
-  readonly email: InputMaybe<SortOrderEnum>;
-  readonly phone: InputMaybe<SortOrderEnum>;
+  readonly icon: InputMaybe<SortOrderEnum>;
+  readonly text: InputMaybe<SortOrderEnum>;
 };
 
 type FooterJsonEdge = {
@@ -1115,7 +1743,7 @@ type FooterJsonFilterInput = {
   readonly NewsletterHeading: InputMaybe<StringQueryOperatorInput>;
   readonly UsefulHeading: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
-  readonly contactDetails: InputMaybe<FooterJsonContactDetailsFilterInput>;
+  readonly contactDetails: InputMaybe<FooterJsonContactDetailsFilterListInput>;
   readonly contactUs: InputMaybe<StringQueryOperatorInput>;
   readonly contactWidget: InputMaybe<StringQueryOperatorInput>;
   readonly copyrightText: InputMaybe<StringQueryOperatorInput>;
@@ -1505,6 +2133,180 @@ type GatsbyImagePlaceholder =
   | 'dominantColor'
   | 'none'
   | 'tracedSVG';
+
+type HeaderJson = Node & {
+  readonly buttonName: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly contact: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly navbar: Maybe<HeaderJsonNavbar>;
+  readonly parent: Maybe<Node>;
+  readonly phone: Maybe<Scalars['String']>;
+};
+
+type HeaderJsonConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<HeaderJsonEdge>;
+  readonly group: ReadonlyArray<HeaderJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<HeaderJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type HeaderJsonConnection_distinctArgs = {
+  field: HeaderJsonFieldSelector;
+};
+
+
+type HeaderJsonConnection_groupArgs = {
+  field: HeaderJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type HeaderJsonConnection_maxArgs = {
+  field: HeaderJsonFieldSelector;
+};
+
+
+type HeaderJsonConnection_minArgs = {
+  field: HeaderJsonFieldSelector;
+};
+
+
+type HeaderJsonConnection_sumArgs = {
+  field: HeaderJsonFieldSelector;
+};
+
+type HeaderJsonEdge = {
+  readonly next: Maybe<HeaderJson>;
+  readonly node: HeaderJson;
+  readonly previous: Maybe<HeaderJson>;
+};
+
+type HeaderJsonFieldSelector = {
+  readonly buttonName: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly contact: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly navbar: InputMaybe<HeaderJsonNavbarFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly phone: InputMaybe<FieldSelectorEnum>;
+};
+
+type HeaderJsonFilterInput = {
+  readonly buttonName: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly contact: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly navbar: InputMaybe<HeaderJsonNavbarFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly phone: InputMaybe<StringQueryOperatorInput>;
+};
+
+type HeaderJsonFilterListInput = {
+  readonly elemMatch: InputMaybe<HeaderJsonFilterInput>;
+};
+
+type HeaderJsonGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<HeaderJsonEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<HeaderJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<HeaderJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type HeaderJsonGroupConnection_distinctArgs = {
+  field: HeaderJsonFieldSelector;
+};
+
+
+type HeaderJsonGroupConnection_groupArgs = {
+  field: HeaderJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type HeaderJsonGroupConnection_maxArgs = {
+  field: HeaderJsonFieldSelector;
+};
+
+
+type HeaderJsonGroupConnection_minArgs = {
+  field: HeaderJsonFieldSelector;
+};
+
+
+type HeaderJsonGroupConnection_sumArgs = {
+  field: HeaderJsonFieldSelector;
+};
+
+type HeaderJsonNavbar = {
+  readonly links: Maybe<ReadonlyArray<Maybe<HeaderJsonNavbarLinks>>>;
+};
+
+type HeaderJsonNavbarFieldSelector = {
+  readonly links: InputMaybe<HeaderJsonNavbarLinksFieldSelector>;
+};
+
+type HeaderJsonNavbarFilterInput = {
+  readonly links: InputMaybe<HeaderJsonNavbarLinksFilterListInput>;
+};
+
+type HeaderJsonNavbarLinks = {
+  readonly linkName: Maybe<Scalars['String']>;
+  readonly linkURL: Maybe<Scalars['String']>;
+};
+
+type HeaderJsonNavbarLinksFieldSelector = {
+  readonly linkName: InputMaybe<FieldSelectorEnum>;
+  readonly linkURL: InputMaybe<FieldSelectorEnum>;
+};
+
+type HeaderJsonNavbarLinksFilterInput = {
+  readonly linkName: InputMaybe<StringQueryOperatorInput>;
+  readonly linkURL: InputMaybe<StringQueryOperatorInput>;
+};
+
+type HeaderJsonNavbarLinksFilterListInput = {
+  readonly elemMatch: InputMaybe<HeaderJsonNavbarLinksFilterInput>;
+};
+
+type HeaderJsonNavbarLinksSortInput = {
+  readonly linkName: InputMaybe<SortOrderEnum>;
+  readonly linkURL: InputMaybe<SortOrderEnum>;
+};
+
+type HeaderJsonNavbarSortInput = {
+  readonly links: InputMaybe<HeaderJsonNavbarLinksSortInput>;
+};
+
+type HeaderJsonSortInput = {
+  readonly buttonName: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly contact: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly navbar: InputMaybe<HeaderJsonNavbarSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly phone: InputMaybe<SortOrderEnum>;
+};
 
 type ImageCropFocus =
   | 17
@@ -2090,11 +2892,16 @@ type PotraceTurnPolicy =
   | 'white';
 
 type Query = {
+  readonly aboutJson: Maybe<AboutJson>;
+  readonly allAboutJson: AboutJsonConnection;
+  readonly allBannerJson: BannerJsonConnection;
   readonly allContactJson: ContactJsonConnection;
+  readonly allCourseplanJson: CourseplanJsonConnection;
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
   readonly allFooterJson: FooterJsonConnection;
   readonly allGalleryJson: GalleryJsonConnection;
+  readonly allHeaderJson: HeaderJsonConnection;
   readonly allImageSharp: ImageSharpConnection;
   readonly allServiceJson: ServiceJsonConnection;
   readonly allSite: SiteConnection;
@@ -2104,11 +2911,15 @@ type Query = {
   readonly allSitePlugin: SitePluginConnection;
   readonly allTeamJson: TeamJsonConnection;
   readonly allVideoJson: VideoJsonConnection;
+  readonly allWhyweJson: WhyweJsonConnection;
+  readonly bannerJson: Maybe<BannerJson>;
   readonly contactJson: Maybe<ContactJson>;
+  readonly courseplanJson: Maybe<CourseplanJson>;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly footerJson: Maybe<FooterJson>;
   readonly galleryJson: Maybe<GalleryJson>;
+  readonly headerJson: Maybe<HeaderJson>;
   readonly imageSharp: Maybe<ImageSharp>;
   readonly serviceJson: Maybe<ServiceJson>;
   readonly site: Maybe<Site>;
@@ -2118,6 +2929,42 @@ type Query = {
   readonly sitePlugin: Maybe<SitePlugin>;
   readonly teamJson: Maybe<TeamJson>;
   readonly videoJson: Maybe<VideoJson>;
+  readonly whyweJson: Maybe<WhyweJson>;
+};
+
+
+type Query_aboutJsonArgs = {
+  absoluteImage: InputMaybe<StringQueryOperatorInput>;
+  allButton: InputMaybe<AboutJsonAllButtonFilterListInput>;
+  button: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  desc: InputMaybe<StringQueryOperatorInput>;
+  help: InputMaybe<StringQueryOperatorInput>;
+  icon: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  mainImage: InputMaybe<StringQueryOperatorInput>;
+  mainTitle: InputMaybe<StringQueryOperatorInput>;
+  paragraph: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  phoneNum: InputMaybe<StringQueryOperatorInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_allAboutJsonArgs = {
+  filter: InputMaybe<AboutJsonFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<AboutJsonSortInput>>>;
+};
+
+
+type Query_allBannerJsonArgs = {
+  filter: InputMaybe<BannerJsonFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<BannerJsonSortInput>>>;
 };
 
 
@@ -2126,6 +2973,14 @@ type Query_allContactJsonArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<ContactJsonSortInput>>>;
+};
+
+
+type Query_allCourseplanJsonArgs = {
+  filter: InputMaybe<CourseplanJsonFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<CourseplanJsonSortInput>>>;
 };
 
 
@@ -2158,6 +3013,14 @@ type Query_allGalleryJsonArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<GalleryJsonSortInput>>>;
+};
+
+
+type Query_allHeaderJsonArgs = {
+  filter: InputMaybe<HeaderJsonFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<HeaderJsonSortInput>>>;
 };
 
 
@@ -2233,6 +3096,33 @@ type Query_allVideoJsonArgs = {
 };
 
 
+type Query_allWhyweJsonArgs = {
+  filter: InputMaybe<WhyweJsonFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<WhyweJsonSortInput>>>;
+};
+
+
+type Query_bannerJsonArgs = {
+  absoluteImage: InputMaybe<StringQueryOperatorInput>;
+  allButton: InputMaybe<BannerJsonAllButtonFilterListInput>;
+  button: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  desc: InputMaybe<StringQueryOperatorInput>;
+  help: InputMaybe<StringQueryOperatorInput>;
+  icon: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  mainImage: InputMaybe<StringQueryOperatorInput>;
+  mainTitle: InputMaybe<StringQueryOperatorInput>;
+  paragraph: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  phoneNum: InputMaybe<StringQueryOperatorInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+};
+
+
 type Query_contactJsonArgs = {
   button: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -2247,6 +3137,18 @@ type Query_contactJsonArgs = {
   parent: InputMaybe<NodeFilterInput>;
   submitButton: InputMaybe<ContactJsonSubmitButtonFilterInput>;
   title: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_courseplanJsonArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  filters: InputMaybe<CourseplanJsonFiltersFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  pageTitle: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  tableData: InputMaybe<CourseplanJsonTableDataFilterListInput>;
+  tableHeaders: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -2301,21 +3203,31 @@ type Query_fileArgs = {
   blksize: InputMaybe<IntQueryOperatorInput>;
   blocks: InputMaybe<IntQueryOperatorInput>;
   changeTime: InputMaybe<DateQueryOperatorInput>;
+  childAboutJson: InputMaybe<AboutJsonFilterInput>;
+  childBannerJson: InputMaybe<BannerJsonFilterInput>;
   childContactJson: InputMaybe<ContactJsonFilterInput>;
+  childCourseplanJson: InputMaybe<CourseplanJsonFilterInput>;
   childFooterJson: InputMaybe<FooterJsonFilterInput>;
   childGalleryJson: InputMaybe<GalleryJsonFilterInput>;
+  childHeaderJson: InputMaybe<HeaderJsonFilterInput>;
   childImageSharp: InputMaybe<ImageSharpFilterInput>;
   childServiceJson: InputMaybe<ServiceJsonFilterInput>;
   childTeamJson: InputMaybe<TeamJsonFilterInput>;
   childVideoJson: InputMaybe<VideoJsonFilterInput>;
+  childWhyweJson: InputMaybe<WhyweJsonFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
+  childrenAboutJson: InputMaybe<AboutJsonFilterListInput>;
+  childrenBannerJson: InputMaybe<BannerJsonFilterListInput>;
   childrenContactJson: InputMaybe<ContactJsonFilterListInput>;
+  childrenCourseplanJson: InputMaybe<CourseplanJsonFilterListInput>;
   childrenFooterJson: InputMaybe<FooterJsonFilterListInput>;
   childrenGalleryJson: InputMaybe<GalleryJsonFilterListInput>;
+  childrenHeaderJson: InputMaybe<HeaderJsonFilterListInput>;
   childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
   childrenServiceJson: InputMaybe<ServiceJsonFilterListInput>;
   childrenTeamJson: InputMaybe<TeamJsonFilterListInput>;
   childrenVideoJson: InputMaybe<VideoJsonFilterListInput>;
+  childrenWhyweJson: InputMaybe<WhyweJsonFilterListInput>;
   ctime: InputMaybe<DateQueryOperatorInput>;
   ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   dev: InputMaybe<IntQueryOperatorInput>;
@@ -2349,7 +3261,7 @@ type Query_footerJsonArgs = {
   NewsletterHeading: InputMaybe<StringQueryOperatorInput>;
   UsefulHeading: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
-  contactDetails: InputMaybe<FooterJsonContactDetailsFilterInput>;
+  contactDetails: InputMaybe<FooterJsonContactDetailsFilterListInput>;
   contactUs: InputMaybe<StringQueryOperatorInput>;
   contactWidget: InputMaybe<StringQueryOperatorInput>;
   copyrightText: InputMaybe<StringQueryOperatorInput>;
@@ -2377,6 +3289,18 @@ type Query_galleryJsonArgs = {
   mainTitle: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   title: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_headerJsonArgs = {
+  buttonName: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  contact: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  navbar: InputMaybe<HeaderJsonNavbarFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  phone: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -2501,6 +3425,22 @@ type Query_videoJsonArgs = {
   playIcon: InputMaybe<StringQueryOperatorInput>;
   spinImage: InputMaybe<StringQueryOperatorInput>;
   title: InputMaybe<VideoJsonTitleFilterInput>;
+};
+
+
+type Query_whyweJsonArgs = {
+  absoluteImage: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  desc: InputMaybe<StringQueryOperatorInput>;
+  icon: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  mainImage: InputMaybe<StringQueryOperatorInput>;
+  mainTitle: InputMaybe<StringQueryOperatorInput>;
+  news: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+  whyWe: InputMaybe<WhyweJsonWhyWeFilterListInput>;
 };
 
 type ServiceJson = Node & {
@@ -3831,6 +4771,188 @@ type VideoJsonTitleSortInput = {
 
 type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
+};
+
+type WhyweJson = Node & {
+  readonly absoluteImage: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly desc: Maybe<Scalars['String']>;
+  readonly icon: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly mainImage: Maybe<Scalars['String']>;
+  readonly mainTitle: Maybe<Scalars['String']>;
+  readonly news: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly title: Maybe<Scalars['String']>;
+  readonly whyWe: Maybe<ReadonlyArray<Maybe<WhyweJsonWhyWe>>>;
+};
+
+type WhyweJsonConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<WhyweJsonEdge>;
+  readonly group: ReadonlyArray<WhyweJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<WhyweJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type WhyweJsonConnection_distinctArgs = {
+  field: WhyweJsonFieldSelector;
+};
+
+
+type WhyweJsonConnection_groupArgs = {
+  field: WhyweJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type WhyweJsonConnection_maxArgs = {
+  field: WhyweJsonFieldSelector;
+};
+
+
+type WhyweJsonConnection_minArgs = {
+  field: WhyweJsonFieldSelector;
+};
+
+
+type WhyweJsonConnection_sumArgs = {
+  field: WhyweJsonFieldSelector;
+};
+
+type WhyweJsonEdge = {
+  readonly next: Maybe<WhyweJson>;
+  readonly node: WhyweJson;
+  readonly previous: Maybe<WhyweJson>;
+};
+
+type WhyweJsonFieldSelector = {
+  readonly absoluteImage: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly desc: InputMaybe<FieldSelectorEnum>;
+  readonly icon: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly mainImage: InputMaybe<FieldSelectorEnum>;
+  readonly mainTitle: InputMaybe<FieldSelectorEnum>;
+  readonly news: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly whyWe: InputMaybe<WhyweJsonWhyWeFieldSelector>;
+};
+
+type WhyweJsonFilterInput = {
+  readonly absoluteImage: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly desc: InputMaybe<StringQueryOperatorInput>;
+  readonly icon: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly mainImage: InputMaybe<StringQueryOperatorInput>;
+  readonly mainTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly news: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly whyWe: InputMaybe<WhyweJsonWhyWeFilterListInput>;
+};
+
+type WhyweJsonFilterListInput = {
+  readonly elemMatch: InputMaybe<WhyweJsonFilterInput>;
+};
+
+type WhyweJsonGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<WhyweJsonEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<WhyweJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<WhyweJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type WhyweJsonGroupConnection_distinctArgs = {
+  field: WhyweJsonFieldSelector;
+};
+
+
+type WhyweJsonGroupConnection_groupArgs = {
+  field: WhyweJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type WhyweJsonGroupConnection_maxArgs = {
+  field: WhyweJsonFieldSelector;
+};
+
+
+type WhyweJsonGroupConnection_minArgs = {
+  field: WhyweJsonFieldSelector;
+};
+
+
+type WhyweJsonGroupConnection_sumArgs = {
+  field: WhyweJsonFieldSelector;
+};
+
+type WhyweJsonSortInput = {
+  readonly absoluteImage: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly desc: InputMaybe<SortOrderEnum>;
+  readonly icon: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly mainImage: InputMaybe<SortOrderEnum>;
+  readonly mainTitle: InputMaybe<SortOrderEnum>;
+  readonly news: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly title: InputMaybe<SortOrderEnum>;
+  readonly whyWe: InputMaybe<WhyweJsonWhyWeSortInput>;
+};
+
+type WhyweJsonWhyWe = {
+  readonly accordion: Maybe<Scalars['String']>;
+  readonly desc: Maybe<Scalars['String']>;
+  readonly iconDown: Maybe<Scalars['String']>;
+  readonly iconRight: Maybe<Scalars['String']>;
+};
+
+type WhyweJsonWhyWeFieldSelector = {
+  readonly accordion: InputMaybe<FieldSelectorEnum>;
+  readonly desc: InputMaybe<FieldSelectorEnum>;
+  readonly iconDown: InputMaybe<FieldSelectorEnum>;
+  readonly iconRight: InputMaybe<FieldSelectorEnum>;
+};
+
+type WhyweJsonWhyWeFilterInput = {
+  readonly accordion: InputMaybe<StringQueryOperatorInput>;
+  readonly desc: InputMaybe<StringQueryOperatorInput>;
+  readonly iconDown: InputMaybe<StringQueryOperatorInput>;
+  readonly iconRight: InputMaybe<StringQueryOperatorInput>;
+};
+
+type WhyweJsonWhyWeFilterListInput = {
+  readonly elemMatch: InputMaybe<WhyweJsonWhyWeFilterInput>;
+};
+
+type WhyweJsonWhyWeSortInput = {
+  readonly accordion: InputMaybe<SortOrderEnum>;
+  readonly desc: InputMaybe<SortOrderEnum>;
+  readonly iconDown: InputMaybe<SortOrderEnum>;
+  readonly iconRight: InputMaybe<SortOrderEnum>;
 };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
