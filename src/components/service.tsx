@@ -56,7 +56,7 @@ const Service: React.FC = () => {
     const iconMapping: Record<string, IconDefinition> = { faArrowRight };
 
     return (
-        <section className="service bg-fix pt-130 pb-100">
+        <section className="service bg-fix pt-130 pb-100" id="service">
             <div className="container">
                 <div className="section-head style-1 text-center">
                     <span className="sub-title">{serviceData.sub_title}</span>

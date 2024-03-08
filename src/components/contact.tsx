@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
 
     return (
         <React.Fragment>
-            <section id="contact-top" className="contact">
+            <section id="contact-top contact" className="contact">
                 <div className="section-overlay" id="contact"></div>
                 <div className="container">
                     <div className="row">

@@ -67,7 +67,7 @@ const About: React.FC = () => {
         : null;
 
     return (
-        <section className="about">
+        <section className="about" id="about">
             <div className="container mb-5">
                 <div className="row">
                     <div className="col-xl-6 col-lg-6">

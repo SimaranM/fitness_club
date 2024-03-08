@@ -70,9 +70,9 @@ const Team: React.FC = () => {
     const imageList = data.Team.nodes;
 
     return (
-        <section id="team-area" className="pt-150 pb-150 team-area">
+        <section id="team" className="pt-150 pb-150 team-area">
             <div className="container">
-                <div className="row ">
+                <div className="row">
                     <div className="col-lg-8 offset-lg-2">
                         <div className="section-title text-center">
                             <h2>

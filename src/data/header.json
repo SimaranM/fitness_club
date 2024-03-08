@@ -10,11 +10,11 @@
           "linkURL": "/"
         },
         {
-          "linkName": "Über uns",
+          "linkName": "About Us",
           "linkURL": "/#about"
         },
         {
-          "linkName": "Leistungen",
+          "linkName": "Service",
           "linkURL": "/#service"
         },
         {
@@ -22,11 +22,11 @@
           "linkURL": "/#team"
         },
         {
-          "linkName": "Bildergalerie",
+          "linkName": "Gallery",
           "linkURL": "/#gallery"
         },
         {
-          "linkName": "Kontakt uns",
+          "linkName": "Contact",
           "linkURL": "/#contact"
         }
       ]
