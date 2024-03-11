@@ -31,14 +31,6 @@ const config: GatsbyConfig = {
             },
             __key: "images",
         },
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "logo",
-                path: "./src/images/logo/",
-            },
-            __key: "logo",
-        },
     ],
 };
 

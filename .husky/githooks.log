@@ -233,3 +233,24 @@ chore: Refactor after deploying
 2024-03-08 16:07:53,822 - INFO     [commit-msg] - Subject's format is valid
 2024-03-08 16:07:53,822 - INFO     [commit-msg] - Commit type is valid
 2024-03-08 16:07:53,822 - INFO     [commit-msg] - Commit message is valid
+2024-03-11 12:39:16,579 - INFO     [prepare-commit-msg] - Reading commit message file
+2024-03-11 12:39:16,579 - INFO     [prepare-commit-msg] - Prepare commit message
+2024-03-11 12:39:16,579 - DEBUG    [prepare-commit-msg] - Content to prepare:
+['Update images']
+2024-03-11 12:39:16,579 - INFO     [prepare-commit-msg] - Commit message with subject only
+2024-03-11 12:39:16,619 - WARNING  [prepare-commit-msg] - Missing valid prefix in branch name. Commit type is set to: chore
+2024-03-11 12:39:16,620 - DEBUG    [prepare-commit-msg] - Missing commit type in subject line
+2024-03-11 12:39:16,620 - INFO     [prepare-commit-msg] - Adding commit type to subject line: chore
+2024-03-11 12:39:16,620 - DEBUG    [prepare-commit-msg] - Commit message with added commit type:
+['chore: Update images']
+2024-03-11 12:39:16,620 - INFO     [prepare-commit-msg] - Missing issue-ID in branch name.
+2024-03-11 12:39:16,621 - INFO     [prepare-commit-msg] - Writing commit message file
+2024-03-11 12:39:16,621 - DEBUG    [prepare-commit-msg] - Updated commit message:
+chore: Update images
+2024-03-11 12:39:16,742 - DEBUG    [commit-msg] - Content without comments:
+chore: Update images
+2024-03-11 12:39:16,742 - INFO     [commit-msg] - Commit message contains subject only
+2024-03-11 12:39:16,742 - WARNING  [commit-msg] - Issue-ID is optional, but useful for PM tools
+2024-03-11 12:39:16,742 - INFO     [commit-msg] - Subject's format is valid
+2024-03-11 12:39:16,743 - INFO     [commit-msg] - Commit type is valid
+2024-03-11 12:39:16,743 - INFO     [commit-msg] - Commit message is valid
