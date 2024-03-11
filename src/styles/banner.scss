@@ -38,7 +38,7 @@
         h2 {
             color: var(--light);
             font-weight: 600;
-            font-size: 60px;
+            font-size: 80px;
             margin-bottom: 25px;
         }
         p {
@@ -61,7 +61,7 @@
 }
 .mySwiper {
     .swiper-pagination-clickable {
-        bottom: 40px !important;
+        bottom: 80px !important;
     }
     .swiper-pagination-bullet-active {
         border-color: var(--primary) !important;

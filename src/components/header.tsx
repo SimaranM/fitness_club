@@ -28,7 +28,7 @@ const Header: React.FC = () => {
                     }
                 }
             }
-            allFile(filter: { relativeDirectory: { eq: "logo" } }) {
+            allFile(filter: { relativeDirectory: { eq: "header" } }) {
                 nodes {
                     childImageSharp {
                         gatsbyImageData(width: 200)
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
 
     return (
         <section>
-            <div className="bg-light header">
+            <div className="header">
                 <div className="container-fluid">
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="py-3 text-center">

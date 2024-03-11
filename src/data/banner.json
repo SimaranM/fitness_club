@@ -1,24 +1,26 @@
 [
     {
-        "mainTitle": "MORE ABOUT US",
-        "title": "Unlock Your Full Potential, Achieve Your Goals.",
-        "desc": "Through our personalized approach and expert guidance, we will work together to identify your passions and ambitions. Our team of dedicated professionals is committed to providing you with the tools, resources, and support you need to overcome obstacles and make significant progress.",
-        "button": "View Class Schedule",
-        "paragraph": "Gyms play a vital role in promoting an active and healthy lifestyle. They provide a supportive and motivating environment for individuals to engage in regular physical activity.",
-        "help": "Need Help?",
-        "phoneNum": "(+258) 2569 2582",
-        "icon": "customer.png",
-        "mainImage": "aboutSmall.png",
-        "absoluteImage": "aboutBig.png",
-        "allButton": [
+        "slides": [
             {
-                "button": "Our Mission"
+                "mainTitle": "we are professional & expert",
+                "title": "Making Different From Other Builds Health",
+                "desc": "Best GYM & Fitness Center Build Your Health",
+                "button": " Get started",
+                "image": "banner"
             },
             {
-                "button": "Our Vision"
+                "mainTitle": "we are professional & expert",
+                "title": "Making Different From Other Builds Health",
+                "desc": "Best GYM & Fitness Center Build Your Health",
+                "button": " Get started",
+                "image": "dumbble"
             },
             {
-                "button": "Our Goal"
+                "mainTitle": "we are professional & expert",
+                "title": "Making Different From Other Builds Health",
+                "desc": "Best GYM & Fitness Center Build Your Health",
+                "button": " Get started",
+                "image": "exercise"
             }
         ]
     }

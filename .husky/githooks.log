@@ -212,3 +212,24 @@ chore: Refactoring
 2024-03-08 13:36:39,051 - INFO     [commit-msg] - Subject's format is valid
 2024-03-08 13:36:39,051 - INFO     [commit-msg] - Commit type is valid
 2024-03-08 13:36:39,051 - INFO     [commit-msg] - Commit message is valid
+2024-03-08 16:07:53,666 - INFO     [prepare-commit-msg] - Reading commit message file
+2024-03-08 16:07:53,666 - INFO     [prepare-commit-msg] - Prepare commit message
+2024-03-08 16:07:53,666 - DEBUG    [prepare-commit-msg] - Content to prepare:
+['Refactor after deploying']
+2024-03-08 16:07:53,666 - INFO     [prepare-commit-msg] - Commit message with subject only
+2024-03-08 16:07:53,697 - WARNING  [prepare-commit-msg] - Missing valid prefix in branch name. Commit type is set to: chore
+2024-03-08 16:07:53,697 - DEBUG    [prepare-commit-msg] - Missing commit type in subject line
+2024-03-08 16:07:53,697 - INFO     [prepare-commit-msg] - Adding commit type to subject line: chore
+2024-03-08 16:07:53,697 - DEBUG    [prepare-commit-msg] - Commit message with added commit type:
+['chore: Refactor after deploying']
+2024-03-08 16:07:53,697 - INFO     [prepare-commit-msg] - Missing issue-ID in branch name.
+2024-03-08 16:07:53,697 - INFO     [prepare-commit-msg] - Writing commit message file
+2024-03-08 16:07:53,697 - DEBUG    [prepare-commit-msg] - Updated commit message:
+chore: Refactor after deploying
+2024-03-08 16:07:53,822 - DEBUG    [commit-msg] - Content without comments:
+chore: Refactor after deploying
+2024-03-08 16:07:53,822 - INFO     [commit-msg] - Commit message contains subject only
+2024-03-08 16:07:53,822 - WARNING  [commit-msg] - Issue-ID is optional, but useful for PM tools
+2024-03-08 16:07:53,822 - INFO     [commit-msg] - Subject's format is valid
+2024-03-08 16:07:53,822 - INFO     [commit-msg] - Commit type is valid
+2024-03-08 16:07:53,822 - INFO     [commit-msg] - Commit message is valid

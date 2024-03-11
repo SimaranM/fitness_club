@@ -217,41 +217,11 @@ type AboutJsonSortInput = {
 };
 
 type BannerJson = Node & {
-  readonly absoluteImage: Maybe<Scalars['String']>;
-  readonly allButton: Maybe<ReadonlyArray<Maybe<BannerJsonAllButton>>>;
-  readonly button: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
-  readonly desc: Maybe<Scalars['String']>;
-  readonly help: Maybe<Scalars['String']>;
-  readonly icon: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
-  readonly mainImage: Maybe<Scalars['String']>;
-  readonly mainTitle: Maybe<Scalars['String']>;
-  readonly paragraph: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
-  readonly phoneNum: Maybe<Scalars['String']>;
-  readonly title: Maybe<Scalars['String']>;
-};
-
-type BannerJsonAllButton = {
-  readonly button: Maybe<Scalars['String']>;
-};
-
-type BannerJsonAllButtonFieldSelector = {
-  readonly button: InputMaybe<FieldSelectorEnum>;
-};
-
-type BannerJsonAllButtonFilterInput = {
-  readonly button: InputMaybe<StringQueryOperatorInput>;
-};
-
-type BannerJsonAllButtonFilterListInput = {
-  readonly elemMatch: InputMaybe<BannerJsonAllButtonFilterInput>;
-};
-
-type BannerJsonAllButtonSortInput = {
-  readonly button: InputMaybe<SortOrderEnum>;
+  readonly slides: Maybe<ReadonlyArray<Maybe<BannerJsonSlides>>>;
 };
 
 type BannerJsonConnection = {
@@ -300,39 +270,19 @@ type BannerJsonEdge = {
 };
 
 type BannerJsonFieldSelector = {
-  readonly absoluteImage: InputMaybe<FieldSelectorEnum>;
-  readonly allButton: InputMaybe<BannerJsonAllButtonFieldSelector>;
-  readonly button: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
-  readonly desc: InputMaybe<FieldSelectorEnum>;
-  readonly help: InputMaybe<FieldSelectorEnum>;
-  readonly icon: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
-  readonly mainImage: InputMaybe<FieldSelectorEnum>;
-  readonly mainTitle: InputMaybe<FieldSelectorEnum>;
-  readonly paragraph: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
-  readonly phoneNum: InputMaybe<FieldSelectorEnum>;
-  readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly slides: InputMaybe<BannerJsonSlidesFieldSelector>;
 };
 
 type BannerJsonFilterInput = {
-  readonly absoluteImage: InputMaybe<StringQueryOperatorInput>;
-  readonly allButton: InputMaybe<BannerJsonAllButtonFilterListInput>;
-  readonly button: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
-  readonly desc: InputMaybe<StringQueryOperatorInput>;
-  readonly help: InputMaybe<StringQueryOperatorInput>;
-  readonly icon: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
-  readonly mainImage: InputMaybe<StringQueryOperatorInput>;
-  readonly mainTitle: InputMaybe<StringQueryOperatorInput>;
-  readonly paragraph: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
-  readonly phoneNum: InputMaybe<StringQueryOperatorInput>;
-  readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly slides: InputMaybe<BannerJsonSlidesFilterListInput>;
 };
 
 type BannerJsonFilterListInput = {
@@ -380,22 +330,48 @@ type BannerJsonGroupConnection_sumArgs = {
   field: BannerJsonFieldSelector;
 };
 
-type BannerJsonSortInput = {
-  readonly absoluteImage: InputMaybe<SortOrderEnum>;
-  readonly allButton: InputMaybe<BannerJsonAllButtonSortInput>;
+type BannerJsonSlides = {
+  readonly button: Maybe<Scalars['String']>;
+  readonly desc: Maybe<Scalars['String']>;
+  readonly image: Maybe<Scalars['String']>;
+  readonly mainTitle: Maybe<Scalars['String']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+type BannerJsonSlidesFieldSelector = {
+  readonly button: InputMaybe<FieldSelectorEnum>;
+  readonly desc: InputMaybe<FieldSelectorEnum>;
+  readonly image: InputMaybe<FieldSelectorEnum>;
+  readonly mainTitle: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type BannerJsonSlidesFilterInput = {
+  readonly button: InputMaybe<StringQueryOperatorInput>;
+  readonly desc: InputMaybe<StringQueryOperatorInput>;
+  readonly image: InputMaybe<StringQueryOperatorInput>;
+  readonly mainTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type BannerJsonSlidesFilterListInput = {
+  readonly elemMatch: InputMaybe<BannerJsonSlidesFilterInput>;
+};
+
+type BannerJsonSlidesSortInput = {
   readonly button: InputMaybe<SortOrderEnum>;
-  readonly children: InputMaybe<NodeSortInput>;
   readonly desc: InputMaybe<SortOrderEnum>;
-  readonly help: InputMaybe<SortOrderEnum>;
-  readonly icon: InputMaybe<SortOrderEnum>;
+  readonly image: InputMaybe<SortOrderEnum>;
+  readonly mainTitle: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type BannerJsonSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
-  readonly mainImage: InputMaybe<SortOrderEnum>;
-  readonly mainTitle: InputMaybe<SortOrderEnum>;
-  readonly paragraph: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
-  readonly phoneNum: InputMaybe<SortOrderEnum>;
-  readonly title: InputMaybe<SortOrderEnum>;
+  readonly slides: InputMaybe<BannerJsonSlidesSortInput>;
 };
 
 type BlurredOptions = {
@@ -3105,21 +3081,11 @@ type Query_allWhyweJsonArgs = {
 
 
 type Query_bannerJsonArgs = {
-  absoluteImage: InputMaybe<StringQueryOperatorInput>;
-  allButton: InputMaybe<BannerJsonAllButtonFilterListInput>;
-  button: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
-  desc: InputMaybe<StringQueryOperatorInput>;
-  help: InputMaybe<StringQueryOperatorInput>;
-  icon: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
-  mainImage: InputMaybe<StringQueryOperatorInput>;
-  mainTitle: InputMaybe<StringQueryOperatorInput>;
-  paragraph: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
-  phoneNum: InputMaybe<StringQueryOperatorInput>;
-  title: InputMaybe<StringQueryOperatorInput>;
+  slides: InputMaybe<BannerJsonSlidesFilterListInput>;
 };
 
 
